@@ -1,0 +1,22 @@
+# MIRACLE Winter Academy 2026: course Python environment
+# Create with:  conda env create -f environment.yml
+# Activate with: conda activate miracle
+name: miracle
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - ipykernel
+  - pytest
+  - scanpy
+  - anndata
+  - python-igraph
+  - leidenalg
+  - scikit-learn

@@ -1,0 +1,108 @@
+site_name: MIRACLE Winter Academy 2026
+site_description: >-
+  Data Analysis and AI-Assisted Science in Biomedical Research.
+  Second Faculty of Medicine, Charles University, Prague, 30 November – 3 December 2026.
+site_author: MIRACLE Research Software Engineering team
+site_url: https://preislet.github.io/miracle-winter-academy-2026/
+repo_url: https://github.com/preislet/miracle-winter-academy-2026
+edit_uri: edit/main/docs/
+
+copyright: >-
+  The MIRACLE Winter Academy is funded by MIRACLE MSCA. MIRACLE is funded by the European Union's
+  Horizon Europe Research and Innovation Programme under the Marie Skłodowska-Curie Actions
+  Grant Agreement no. 101167512.
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/snowflake
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.tabs.link
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+
+nav:
+  - Home: index.md
+  - Prerequisites:
+      - prerequisites/index.md
+      - Terminal basics: prerequisites/terminal.md
+      - R and RStudio: prerequisites/r-rstudio.md
+      - Git and GitHub: prerequisites/git.md
+      - Python and Conda: prerequisites/python-conda.md
+      - Claude: prerequisites/claude-tools.md
+      - Check your setup: prerequisites/check.md
+  - Programme: programme.md
+  - Workshops:
+      - workshops/index.md
+      - "Mon · Environment setup": workshops/environment-setup.md
+      - "Mon · Version control with Git": workshops/git.md
+      - "Mon · R refresher": workshops/r-refresher.md
+      - "Tue · Python": workshops/python.md
+      - "Tue · AI-assisted coding I": workshops/ai-coding-1.md
+      - "Tue · AI-assisted coding II": workshops/ai-coding-2.md
+      - "Wed · AI-assisted science I": workshops/ai-science-1.md
+      - "Wed · AI-assisted science II": workshops/ai-science-2.md
+      - "Thu · Working with imperfect data": workshops/imperfect-data.md
+      - "Thu · Single-cell practical": workshops/single-cell.md

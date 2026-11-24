@@ -1,0 +1,80 @@
+# Claude
+
+Two Claude tools are used during the course:
+
+- **Claude Code**: an AI coding agent that runs in your terminal, reads and edits files in your
+  project and runs commands, always asking for your permission first. Used in the *AI-assisted
+  coding* and *single-cell* practicals.
+- **Claude desktop app / Claude Science**: used in the *AI-assisted science* sessions for
+  literature search and scientific workflows.
+
+!!! warning "Account and access"
+    Claude Code needs a Claude account with a paid plan (Pro, Max, Team or Enterprise) or an
+    Anthropic Console account. **How course access will be provided is still being arranged.**
+    The organisers will email you before the course. Install the software now; you can log in later.
+
+## Install Claude Code
+
+=== "macOS"
+
+    ```bash
+    curl -fsSL https://claude.ai/install.sh | bash
+    ```
+
+    Or with Homebrew: `brew install --cask claude-code`.
+
+=== "Windows"
+
+    Make sure [Git for Windows](git.md) is installed first, because Claude Code uses Git Bash
+    internally. Then, in **PowerShell**:
+
+    ```powershell
+    irm https://claude.ai/install.ps1 | iex
+    ```
+
+    Close and reopen your terminal afterwards. Using WSL2? Follow the *Linux* tab inside WSL instead.
+
+=== "Linux"
+
+    ```bash
+    curl -fsSL https://claude.ai/install.sh | bash
+    ```
+
+Check (in a **new** terminal window):
+
+```bash
+claude --version
+```
+
+### First start (once you have access)
+
+```bash
+mkdir -p ~/miracle-test && cd ~/miracle-test
+claude
+```
+
+Follow the login prompt in your browser. Type `/exit` to quit.
+
+!!! danger "Never start Claude Code in your home folder or on real patient data"
+    Always `cd` into a dedicated project folder first. The agent can read files in the folder
+    where it is started. Sandboxing and permissions are covered on Monday and Wednesday.
+
+## Install the Claude desktop app
+
+=== "macOS"
+
+    Download from [claude.ai/download](https://claude.ai/download), open the `.dmg`, and drag
+    Claude into *Applications*.
+
+=== "Windows"
+
+    Download and run the installer from [claude.ai/download](https://claude.ai/download).
+
+=== "Linux"
+
+    There is no official desktop app for Linux. Use [claude.ai](https://claude.ai) in your browser.
+
+## Claude Science
+
+Instructions for accessing **Claude Science** will be provided by the organisers together with
+the account details.

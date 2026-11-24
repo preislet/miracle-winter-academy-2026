@@ -1,0 +1,73 @@
+/* MIRACLE palette: navy headings from the programme PDF, magenta accent from the logo */
+:root {
+  --miracle-navy: #1f3864;
+  --miracle-magenta: #c2185b;
+  --miracle-violet: #7b4fd1;
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--miracle-navy);
+  --md-primary-fg-color--light: #2e4a7d;
+  --md-primary-fg-color--dark: #142645;
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--miracle-magenta);
+  --md-accent-fg-color--transparent: rgba(194, 24, 91, 0.1);
+}
+
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #1a2d50;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: #8fb4ff;
+}
+
+/* Hero on the home page */
+.hero {
+  padding: 1.6rem 1.4rem;
+  margin: 0 0 1.5rem;
+  border-radius: 0.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--miracle-navy) 0%, #3a2f7a 60%, var(--miracle-magenta) 130%);
+}
+.hero h1 { color: #fff; margin: 0 0 0.3rem; font-weight: 700; }
+.hero p { margin: 0.2rem 0; }
+.hero .subtitle { font-size: 1.05rem; opacity: 0.95; }
+.hero .md-button { color: #fff; border-color: #fff; margin-top: 0.8rem; }
+.hero .md-button--primary { background: #fff; color: var(--miracle-navy); }
+.hero .md-button:hover { background: var(--miracle-magenta); border-color: var(--miracle-magenta); color: #fff; }
+
+/* Session meta line under workshop titles */
+.session-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: -0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Track pills */
+.pill {
+  display: inline-block;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+.pill.basic { background: #e3f2fd; color: #0d47a1; }
+.pill.advanced { background: #fce4ec; color: #880e4f; }
+.pill.all { background: #ede7f6; color: #4527a0; }
+.pill.lecture { background: #eceff1; color: #37474f; }
+[data-md-color-scheme="slate"] .pill.basic { background: #0d47a1; color: #e3f2fd; }
+[data-md-color-scheme="slate"] .pill.advanced { background: #880e4f; color: #fce4ec; }
+[data-md-color-scheme="slate"] .pill.all { background: #4527a0; color: #ede7f6; }
+[data-md-color-scheme="slate"] .pill.lecture { background: #37474f; color: #eceff1; }
+
+/* Programme tables */
+.md-typeset table:not([class]) td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.md-typeset .break { color: var(--md-default-fg-color--lighter); font-style: italic; }
