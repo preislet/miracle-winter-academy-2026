@@ -4,6 +4,14 @@ Run each check below. Every command should print a version number rather than an
 If something fails, go back to the relevant page. If you cannot fix it, bring the error
 message to Monday's [environment setup](../workshops/environment-setup.md) session.
 
+## Course account
+
+Run the checks below **while signed in as `miracle-course`** (see [Separate user account](separate-account.md)):
+
+```bash
+whoami        # miracle-course
+```
+
 ## In the terminal
 
 Use Terminal on macOS/Linux and Git Bash on Windows. Run the `conda` lines in Miniforge Prompt

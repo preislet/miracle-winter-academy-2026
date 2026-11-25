@@ -1,7 +1,7 @@
 # Prerequisites
 
-All practical sessions run on **your own laptop**. Please install everything below **before
-Monday 30 November 2026**, then run the [setup check](check.md). It takes roughly 1–2 hours,
+All practical sessions run on **your own laptop**, in a [separate user account](separate-account.md)
+just for the course. Please install everything below **before Monday 30 November 2026**, then run the [setup check](check.md). It takes roughly 1–2 hours,
 most of it waiting for downloads.
 
 !!! tip "Stuck? Don't worry."
@@ -24,6 +24,7 @@ On each page below, pick your operating system once and the choice applies acros
 
 ### Everyone
 
+- [ ] [Separate user account](separate-account.md): create the `miracle-course` account and sign in to it. **Do this first** and install everything below there
 - [ ] [Terminal basics](terminal.md): know how to open a terminal on your laptop
 - [ ] [R and RStudio](r-rstudio.md): R ≥ 4.4, RStudio Desktop, course R packages
 - [ ] [Git and GitHub](git.md): Git installed and configured, a GitHub account

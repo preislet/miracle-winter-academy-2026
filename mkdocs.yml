@@ -95,6 +95,7 @@ nav:
   - Getting there: getting-there.md
   - Prerequisites:
       - prerequisites/index.md
+      - Separate user account: prerequisites/separate-account.md
       - Terminal basics: prerequisites/terminal.md
       - R and RStudio: prerequisites/r-rstudio.md
       - Positron: prerequisites/positron.md

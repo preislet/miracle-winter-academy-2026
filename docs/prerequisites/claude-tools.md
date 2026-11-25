@@ -64,8 +64,9 @@ claude
 
 Follow the login prompt in your browser. Type `/exit` to quit.
 
-!!! danger "Never start Claude Code in your home folder or on real patient data"
-    Always `cd` into a dedicated project folder first. The agent can read files in the folder
+!!! danger "Only in the course account, never on real patient data"
+    Use Claude Code only while signed in to your [separate course account](separate-account.md),
+    and always `cd` into a dedicated project folder first. The agent can read files in the folder
     where it is started. Sandboxing and permissions are covered on Monday and Wednesday.
 
 ## Install the Claude desktop app
