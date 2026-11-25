@@ -50,6 +50,11 @@ if (length(missing)) message("Missing: ", paste(missing, collapse = ", ")) else 
     requireNamespace("zellkonverter")    # should return TRUE
     ```
 
+## In Positron
+
+Open Positron. The interpreter picker (top right) should list your **R** installation and
+**Python (`miracle`)**. See [Positron](positron.md#check-that-it-finds-r-and-python).
+
 ## Everything passed?
 
 You're ready. See you on **Monday 30 November at 09:00**!

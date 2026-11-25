@@ -11,7 +11,7 @@ hide:
 Data Analysis and AI-Assisted Science in Biomedical Research
 { .subtitle }
 
-:material-calendar-range: **30 November – 3 December 2026** &nbsp;·&nbsp; :material-map-marker: Second Faculty of Medicine, Charles University, Prague
+:material-calendar-range: **30 November – 3 December 2026** &nbsp;·&nbsp; :material-map-marker: Simulation Centre, Motol University Hospital, Prague
 
 [Install the prerequisites](prerequisites/index.md){ .md-button .md-button--primary }
 [Programme](programme.md){ .md-button }
@@ -41,12 +41,12 @@ Data Analysis and AI-Assisted Science in Biomedical Research
 
     ---
 
-    Second Faculty of Medicine, Charles University<br>
-    V Úvalu 84, 150 06 Praha 5 – Motol, Czech Republic
+    **Simulation Centre (SCIM)**, Motol University Hospital<br>
+    V Úvalu 84/1, 150 06 Praha 5 – Motol, Czech Republic
 
-    [:material-map: Open in Google Maps](https://maps.google.com/?q=V+%C3%9Avalu+84,+150+06+Praha+5)
+    :material-subway-variant: Metro **A** to **Nemocnice Motol** (last stop)
 
-    Room: *to be announced*
+    [:material-walk: Walking route from the metro](getting-there.md){ .md-button }
 
 -   :material-account-group:{ .lg .middle } **Who**
 
@@ -95,9 +95,8 @@ Not sure? See [Which track should I pick?](workshops/index.md#which-track-should
 
 ## Contact
 
-Organising contact at the Second Faculty of Medicine: **Bc. Luděk Liška** (see the
-[event page](https://www.lf2.cuni.cz/akce/miracle-winter-academy-2026)).
-Questions about the practical sessions and software setup: *contact to be added*.
+**Mgr. Jan Stuchlý, Ph.D.**, Second Faculty of Medicine, Charles University<br>
+:material-email: [jan.stuchly@lfmotol.cuni.cz](mailto:jan.stuchly@lfmotol.cuni.cz)
 
 ---
 

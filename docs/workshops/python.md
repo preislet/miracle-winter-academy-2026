@@ -17,7 +17,8 @@ programmer. The two tracks cover different topics:
 - <span class="pill advanced">Advanced</span> **Python tools for single-cell analysis**
 
 !!! info "Before this session"
-    [Miniforge and the `miracle` environment](../prerequisites/python-conda.md) installed.
+    [Miniforge and the `miracle` environment](../prerequisites/python-conda.md) and
+    [Positron](../prerequisites/positron.md) installed.
     Advanced track: also the extra packages (scvi-tools, muon).
 
 === "Basic"

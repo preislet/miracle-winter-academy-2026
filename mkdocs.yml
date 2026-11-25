@@ -85,10 +85,12 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Getting there: getting-there.md
   - Prerequisites:
       - prerequisites/index.md
       - Terminal basics: prerequisites/terminal.md
       - R and RStudio: prerequisites/r-rstudio.md
+      - Positron: prerequisites/positron.md
       - Git and GitHub: prerequisites/git.md
       - Python and Conda: prerequisites/python-conda.md
       - Claude: prerequisites/claude-tools.md

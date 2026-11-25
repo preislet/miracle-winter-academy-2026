@@ -28,6 +28,7 @@ On each page below, pick your operating system once and the choice applies acros
 - [ ] [R and RStudio](r-rstudio.md): R ≥ 4.4, RStudio Desktop, course R packages
 - [ ] [Git and GitHub](git.md): Git installed and configured, a GitHub account
 - [ ] [Python and Conda](python-conda.md): Miniforge and the `miracle` course environment
+- [ ] [Positron](positron.md): R + Python IDE from Posit
 - [ ] [Claude](claude-tools.md): Claude Code (terminal agent) and the Claude desktop app
 - [ ] [Check your setup](check.md): all checks pass
 
