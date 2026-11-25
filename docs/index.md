@@ -41,12 +41,12 @@ Data Analysis and AI-Assisted Science in Biomedical Research
 
     ---
 
-    **Simulation Centre (SCIM)**, Motol University Hospital<br>
+    **Simulation Centre (SCIM), pavilion 40**, Motol University Hospital<br>
     V Úvalu 84/1, 150 06 Praha 5 – Motol, Czech Republic
 
-    :material-subway-variant: Metro **A** to **Nemocnice Motol** (last stop)
+    :material-subway-variant: Metro **A** to **Nemocnice Motol** (last stop), then 14 min on foot
 
-    [:material-walk: Walking route from the metro](getting-there.md){ .md-button }
+    [:material-walk: Walking route](https://mapy.com/s/geherebaro){ .md-button target="_blank" rel="noopener" } [Getting there](getting-there.md){ .md-button }
 
 -   :material-account-group:{ .lg .middle } **Who**
 

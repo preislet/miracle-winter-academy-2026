@@ -9,28 +9,29 @@ Motol University Hospital, where the Second Faculty of Medicine, Charles Univers
 
     ---
 
-    Simulační centrum intenzivní medicíny (SCIM)<br>
+    **Pavilion 40**: Simulační centrum intenzivní medicíny (SCIM)<br>
     Fakultní nemocnice Motol<br>
     V Úvalu 84/1, 150 06 Praha 5 – Motol, Czech Republic
 
-    Building, entrance and room: *to be announced*
+    [:material-map-marker-radius: Show pavilion 40 on Mapy.com](https://mapy.com/en/zakladni?source=base&id=2636152&x=14.3408650&y=50.0717556&z=18){ target="_blank" rel="noopener" }
+
+    Room: *to be announced*
 
 -   :material-subway-variant:{ .lg .middle } **By metro**
 
     ---
 
     Take metro line **A** (green) to its last stop, **Nemocnice Motol**. The hospital campus is
-    right next to the station.
+    right next to the station. Pavilion 40 is at the south end of the campus, about **14 minutes (865 m)** on foot.
 
-    [:material-walk: Walking route from the metro](https://www.google.com/maps/dir/?api=1&origin=Nemocnice%20Motol%20metro%20station%2C%20Prague&destination=V%20%C3%9Avalu%2084%2F1%2C%20150%2006%20Praha%205&travelmode=walking){ .md-button .md-button--primary target="_blank" rel="noopener" }
+    [:material-walk: Walking route from the metro](https://mapy.com/s/geherebaro){ .md-button .md-button--primary target="_blank" rel="noopener" }
 
 </div>
 
 <iframe
-  title="Map: Motol University Hospital"
-  src="https://maps.google.com/maps?q=V%20%C3%9Avalu%2084%2F1%2C%20150%2006%20Praha%205&z=16&output=embed"
-  width="100%" height="380" style="border:0; border-radius:0.4rem;" loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"></iframe>
+  title="Walking route from metro Nemocnice Motol to pavilion 40"
+  src="https://mapy.com/s/cuhagusosu"
+  width="100%" height="420" style="border:0; border-radius:0.4rem;" loading="lazy"></iframe>
 
 ## From the airport
 
@@ -42,6 +43,8 @@ towards Nemocnice Motol. Allow about 30–40 minutes in total.
 Public transport tickets are valid on metro, trams and buses. Buy them in the
 [PID Lítačka app](https://pid.cz/en/tickets/) or from ticket machines in the metro stations.
 
-!!! note "Exact entrance"
-    The building and entrance within the hospital campus will be added here before the course.
-    If you get lost on the day, contact [Jan Stuchlý](mailto:jan.stuchly@lfmotol.cuni.cz).
+!!! tip "Use Mapy.com, not Google Maps"
+    Pavilion 40 is a new building and is not yet shown on Google Maps. The links on this page open
+    [Mapy.com](https://mapy.com), which also has a free mobile app.
+
+If you get lost on the day, contact [Jan Stuchlý](mailto:jan.stuchly@lfmotol.cuni.cz).
