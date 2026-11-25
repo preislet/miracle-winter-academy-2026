@@ -5,7 +5,7 @@
 :material-account-group: <span class="pill basic">Basic</span> <span class="pill advanced">Advanced</span> (parallel rooms)
 :material-laptop: Practical
 
-:material-human-male-board: <span class="pill basic">Basic</span> Luděk Svoboda, Jan Stuchlý &nbsp;&nbsp; <span class="pill advanced">Advanced</span> Tomáš Preisler, Sára Veselá
+:material-human-male-board: <span class="pill basic">Basic</span> Luděk Svoboda, Jan Stuchlý &nbsp;&nbsp; <span class="pill advanced">Advanced</span> Sára Veselá, Tomáš Preisler
 </div>
 
 !!! abstract "Draft, to be confirmed by instructors"
