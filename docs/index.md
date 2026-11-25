@@ -78,8 +78,6 @@ and <span class="pill advanced">Advanced</span> tab; your choice is remembered a
 | **Focus** | reading, running and checking code; a safe review loop with Git | project structure, reusable code, collaborative workflows, single-cell tooling in Python |
 | **Pace** | step by step, with hints | faster, with extension tasks |
 
-Not sure? See [Which track should I pick?](workshops/index.md#which-track-should-i-pick)
-
 ## What you will learn
 
 <div class="grid cards" markdown>

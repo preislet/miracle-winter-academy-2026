@@ -29,19 +29,6 @@ Each workshop page has a tab per track, and the tab you pick is remembered acros
 Every session builds on the previous one. Git comes first because it is the safety net for all
 AI-assisted work that follows: **commit → let the agent work → read the diff → keep or revert.**
 
-## Which track should I pick?
-
-Pick **Advanced** if you agree with most of these statements:
-
-- [ ] I write my own R functions, not just call existing ones.
-- [ ] I have used Git (commit, push) or the terminal for real work.
-- [ ] I organise analyses as projects with several script files.
-- [ ] I have run (or want to run) single-cell analysis in Python.
-
-Otherwise pick **Basic**. Basic is not easier content done slowly. It concentrates on the
-skills that make AI-assisted work *safe*: reading code, checking results and undoing mistakes.
-You can switch tracks between sessions if a room has space, so just tell the instructors.
-
 !!! note "Draft content"
     The workshop descriptions are drafts based on the preliminary programme and will be refined by
     the instructors. Materials (slides, repositories, data) will be linked on each page.
