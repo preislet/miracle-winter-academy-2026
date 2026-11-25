@@ -72,12 +72,6 @@ Lectures and two practicals are shared by everyone. Most hands-on workshops run 
 rooms, one per track. On every workshop page you can switch between the <span class="pill basic">Basic</span>
 and <span class="pill advanced">Advanced</span> tab; your choice is remembered across pages.
 
-| | <span class="pill basic">Basic</span> | <span class="pill advanced">Advanced</span> |
-|---|---|---|
-| **For you if…** | you use R in RStudio but rarely write your own functions, and have not used Git or a terminal | you write R functions and scripts, have used Git or the terminal, and want to go further |
-| **Focus** | reading, running and checking code; a safe review loop with Git | project structure, reusable code, collaborative workflows, single-cell tooling in Python |
-| **Pace** | step by step, with hints | faster, with extension tasks |
-
 ## What you will learn
 
 <div class="grid cards" markdown>
