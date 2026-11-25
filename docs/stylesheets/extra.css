@@ -71,3 +71,6 @@
 /* Programme tables */
 .md-typeset table:not([class]) td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .md-typeset .break { color: var(--md-default-fg-color--lighter); font-style: italic; }
+
+/* Clickable checklists */
+.md-typeset .task-list-control { cursor: pointer; }
