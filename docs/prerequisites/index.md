@@ -6,7 +6,7 @@ most of it waiting for downloads.
 
 !!! tip "Stuck? Don't worry."
     Monday's [Environment setup and terminal essentials](../workshops/environment-setup.md) session
-    (11:35–12:45) is there to fix whatever did not work. Write down the exact error message, or
+    (11:30–12:45) is there to fix whatever did not work. Write down the exact error message, or
     take a screenshot, and bring it along.
 
 ## Your laptop

@@ -15,7 +15,7 @@ Practical sessions link to their workshop page.
     | 10:00–10:40 | **Antigen Receptor Analysis in Hematological Malignancies: Clonality, MRD and Repertoire. Methods and Pitfalls** | <span class="pill lecture">Lecture</span> | Eva Froňková |
     | 10:40–11:00 | <span class="break">Coffee break</span> | | |
     | 11:00–11:30 | **Science in the Age of Agentic AI: A Practical Perspective** | <span class="pill lecture">Lecture</span> | Jan Stuchlý |
-    | 11:35–12:45 | **[Environment setup and terminal essentials](workshops/environment-setup.md)** | <span class="pill all">All</span> | |
+    | 11:30–12:45 | **[Environment setup and terminal essentials](workshops/environment-setup.md)** | <span class="pill all">All</span> | |
     | 12:45–13:45 | <span class="break">Lunch</span> | | |
     | 13:45–15:15 | **[Version control with Git](workshops/git.md#basic)** | <span class="pill basic">Basic</span> | |
     | 13:45–15:15 | **[Version control with Git](workshops/git.md#advanced)** | <span class="pill advanced">Advanced</span> | |

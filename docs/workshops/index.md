@@ -6,7 +6,7 @@ Each workshop page has a tab per track, and the tab you pick is remembered acros
 
 | Day | Time | Workshop | Tracks |
 |---|---|---|---|
-| Mon 30 Nov | 11:35–12:45 | [Environment setup and terminal essentials](environment-setup.md) | <span class="pill all">All</span> |
+| Mon 30 Nov | 11:30–12:45 | [Environment setup and terminal essentials](environment-setup.md) | <span class="pill all">All</span> |
 | Mon 30 Nov | 13:45–15:15 | [Version control with Git](git.md) | <span class="pill basic">Basic</span> <span class="pill advanced">Advanced</span> |
 | Mon 30 Nov | 15:35–17:00 | [R refresher](r-refresher.md) | <span class="pill basic">Basic</span> <span class="pill advanced">Advanced</span> |
 | Tue 1 Dec | 10:35–12:15 | [Python: reading code / tools for single-cell](python.md) | <span class="pill basic">Basic</span> <span class="pill advanced">Advanced</span> |
