@@ -39,7 +39,7 @@ Data Analysis and AI-Assisted Science in Biomedical Research
 
     Every day 09:00 – 17:00 (CET)
 
-    [:material-calendar-plus: Add to calendar](programme.md){ .md-button }
+    [:material-calendar-plus: Add to calendar](programme.md#add-to-your-calendar){ .md-button }
 
 -   :material-map-marker:{ .lg .middle } **Where**
 

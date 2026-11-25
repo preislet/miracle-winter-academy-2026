@@ -1,7 +1,8 @@
-"""MkDocs hook: build iCalendar files for each track from docs/programme.md.
+"""MkDocs hook: build an iCalendar file from docs/programme.md.
 
 The programme page is the single source of truth. Every build parses its day tabs
-and tables and publishes calendar/miracle-basic.ics and calendar/miracle-advanced.ics.
+and tables and publishes calendar/miracle-winter-academy-2026.ics with both tracks.
+Participants subscribe to it, so programme changes reach their calendars automatically.
 """
 
 import re
@@ -84,7 +85,7 @@ def parse_programme(path):
     return sessions
 
 
-def build_calendar(sessions, track, site_url):
+def build_calendar(sessions, site_url):
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = [
         "BEGIN:VCALENDAR",
@@ -92,12 +93,13 @@ def build_calendar(sessions, track, site_url):
         "PRODID:-//MIRACLE Winter Academy 2026//Programme//EN",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
-        f"X-WR-CALNAME:MIRACLE Winter Academy 2026 ({TRACKS[track]} track)",
+        "X-WR-CALNAME:MIRACLE Winter Academy 2026",
+        "REFRESH-INTERVAL;VALUE=DURATION:PT6H",
+        "X-PUBLISHED-TTL:PT6H",
         "X-WR-TIMEZONE:Europe/Prague",
     ]
     for s in sessions:
-        if s["track"] not in (None, track):
-            continue
+        track = s["track"] or "all"
         summary = s["title"] + (f" ({TRACKS[track]})" if s["track"] else "")
         description = "\n".join(filter(None, [s["speaker"], s["detail"]]))
         url = ""
@@ -127,7 +129,6 @@ def build_calendar(sessions, track, site_url):
 
 def on_files(files, config):
     sessions = parse_programme(Path(config["docs_dir"]) / "programme.md")
-    for track in TRACKS:
-        content = build_calendar(sessions, track, config.get("site_url"))
-        files.append(File.generated(config, f"calendar/miracle-{track}.ics", content=content))
+    content = build_calendar(sessions, config.get("site_url"))
+    files.append(File.generated(config, "calendar/miracle-winter-academy-2026.ics", content=content))
     return files

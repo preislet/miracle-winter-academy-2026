@@ -2,17 +2,26 @@
 
 Practical sessions link to their workshop page.
 
-:material-calendar-plus: **Add the programme to your calendar:**
-[Basic track](calendar/miracle-basic.ics){ .md-button download }
-[Advanced track](calendar/miracle-advanced.ics){ .md-button download }
+### :material-calendar-plus: Add to your calendar
 
-??? tip "Stay up to date: subscribe instead of downloading"
-    A downloaded file is a one-off copy. To get programme changes automatically, **subscribe** to
-    the calendar by its link instead. Right-click the button above, choose *Copy link*, then:
+One click subscribes your calendar to the programme, with both tracks. **Changes to the programme
+then appear in your calendar automatically**, so there's nothing to re-download.
 
-    - **Google Calendar:** *Other calendars* → **+** → *From URL*
-    - **Outlook:** *Add calendar* → *Subscribe from web*
-    - **Apple Calendar:** *File* → *New Calendar Subscription*
+[:simple-googlecalendar: Google Calendar](https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fpreislet.github.io%2Fmiracle-winter-academy-2026%2Fcalendar%2Fmiracle-winter-academy-2026.ics){ .md-button target="_blank" rel="noopener" }
+[:simple-apple: Apple Calendar](webcal://preislet.github.io/miracle-winter-academy-2026/calendar/miracle-winter-academy-2026.ics){ .md-button }
+[:material-microsoft-outlook: Outlook (Microsoft 365)](https://outlook.office.com/calendar/0/addfromweb?url=https%3A%2F%2Fpreislet.github.io%2Fmiracle-winter-academy-2026%2Fcalendar%2Fmiracle-winter-academy-2026.ics&name=MIRACLE%20Winter%20Academy%202026){ .md-button target="_blank" rel="noopener" }
+[:material-microsoft-outlook: Outlook.com](https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Fpreislet.github.io%2Fmiracle-winter-academy-2026%2Fcalendar%2Fmiracle-winter-academy-2026.ics&name=MIRACLE%20Winter%20Academy%202026){ .md-button target="_blank" rel="noopener" }
+
+??? info "Other calendar apps, or the buttons don't work?"
+    Add a calendar **by URL** (often called *subscribe* or *from internet*) and paste this link:
+
+    ```
+    https://preislet.github.io/miracle-winter-academy-2026/calendar/miracle-winter-academy-2026.ics
+    ```
+
+    Or [download the file](calendar/miracle-winter-academy-2026.ics) to import a one-off copy,
+    which won't receive later changes. Subscribed calendars refresh on the app's own schedule,
+    which in Google Calendar can take up to a day.
 
 <span class="pill lecture">Lecture</span> plenary talk &nbsp;
 <span class="pill all">All</span> practical for all participants &nbsp;
