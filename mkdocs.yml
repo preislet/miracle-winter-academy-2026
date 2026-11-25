@@ -14,10 +14,10 @@ copyright: >-
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
-  icon:
-    logo: material/snowflake
-  favicon: assets/favicon.svg
+  logo: assets/miracle-mark.png
+  favicon: assets/favicon.png
   palette:
     - media: "(prefers-color-scheme)"
       primary: custom
@@ -53,6 +53,9 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+hooks:
+  - hooks/calendar.py
 
 extra_javascript:
   - javascripts/checklist.js

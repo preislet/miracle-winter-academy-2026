@@ -8,10 +8,19 @@ Two Claude tools are used during the course:
 - **Claude desktop app / Claude Science**: used in the *AI-assisted science* sessions for
   literature search and scientific workflows.
 
-!!! warning "Account and access"
-    Claude Code needs a Claude account with a paid plan (Pro, Max, Team or Enterprise) or an
-    Anthropic Console account. **How course access will be provided is still being arranged.**
-    The organisers will email you before the course. Install the software now; you can log in later.
+!!! info "Your course account: the MIRACLE Academy team"
+    You don't need your own Claude subscription. You will receive an **email with an invitation
+    link to join the *MIRACLE Academy* team** on Claude.
+
+    1. Open the link from the email and sign in or create a Claude account, ideally with the same
+       email address the invitation was sent to.
+    2. Accept the invitation to the **MIRACLE Academy** team.
+    3. Log in to Claude Code and the Claude desktop app with this account, and choose the
+       **MIRACLE Academy** organisation if you are asked.
+
+    No email yet? Check your spam folder, then contact
+    [Jan Stuchlý](mailto:jan.stuchly@lfmotol.cuni.cz). You can install the software now and
+    log in later.
 
 ## Install Claude Code
 
@@ -76,5 +85,5 @@ Follow the login prompt in your browser. Type `/exit` to quit.
 
 ## Claude Science
 
-Instructions for accessing **Claude Science** will be provided by the organisers together with
-the account details.
+Access to **Claude Science** comes with your MIRACLE Academy team account. Further instructions
+will follow in the invitation email or during the course.

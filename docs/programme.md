@@ -2,6 +2,18 @@
 
 Practical sessions link to their workshop page.
 
+:material-calendar-plus: **Add the programme to your calendar:**
+[Basic track](calendar/miracle-basic.ics){ .md-button download }
+[Advanced track](calendar/miracle-advanced.ics){ .md-button download }
+
+??? tip "Stay up to date: subscribe instead of downloading"
+    A downloaded file is a one-off copy. To get programme changes automatically, **subscribe** to
+    the calendar by its link instead. Right-click the button above, choose *Copy link*, then:
+
+    - **Google Calendar:** *Other calendars* → **+** → *From URL*
+    - **Outlook:** *Add calendar* → *Subscribe from web*
+    - **Apple Calendar:** *File* → *New Calendar Subscription*
+
 <span class="pill lecture">Lecture</span> plenary talk &nbsp;
 <span class="pill all">All</span> practical for all participants &nbsp;
 <span class="pill basic">Basic</span> / <span class="pill advanced">Advanced</span> parallel track practicals

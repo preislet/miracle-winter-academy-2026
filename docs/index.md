@@ -6,6 +6,8 @@ hide:
 
 <div class="hero" markdown>
 
+![MIRACLE Leukemia](assets/miracle-logo.png){ .hero-logo }
+
 # MIRACLE Winter Academy 2026
 
 Data Analysis and AI-Assisted Science in Biomedical Research
@@ -36,6 +38,8 @@ Data Analysis and AI-Assisted Science in Biomedical Research
     **Monday 30 November – Thursday 3 December 2026**
 
     Every day 09:00 – 17:00 (CET)
+
+    [:material-calendar-plus: Add to calendar](programme.md){ .md-button }
 
 -   :material-map-marker:{ .lg .middle } **Where**
 
@@ -89,11 +93,3 @@ and <span class="pill advanced">Advanced</span> tab; your choice is remembered a
 
 **Mgr. Jan Stuchlý, Ph.D.**, Second Faculty of Medicine, Charles University<br>
 :material-email: [jan.stuchly@lfmotol.cuni.cz](mailto:jan.stuchly@lfmotol.cuni.cz)
-
----
-
-<small>
-The MIRACLE Winter Academy is funded by MIRACLE MSCA. MIRACLE is funded by the European Union's
-Horizon Europe Research and Innovation Programme under the Marie Skłodowska-Curie Actions
-Grant Agreement no. 101167512.
-</small>

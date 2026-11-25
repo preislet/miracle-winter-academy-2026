@@ -14,8 +14,8 @@ using agents for real scientific tasks *and* on knowing when not to trust them: 
 permissions and critical evaluation of results run through the whole session.
 
 !!! info "Before this session"
-    [Claude desktop app and Claude Code](../prerequisites/claude-tools.md) installed, with
-    access to Claude Science (details from the organisers).
+    [Claude desktop app and Claude Code](../prerequisites/claude-tools.md) installed, and
+    logged in with your MIRACLE Academy team account.
 
 === "Basic"
 
