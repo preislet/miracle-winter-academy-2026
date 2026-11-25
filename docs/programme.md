@@ -1,8 +1,6 @@
 # Programme
 
-!!! note "Preliminary programme"
-    Times and speakers may still change. Practical sessions link to their workshop page.
-    [Download the programme as a PDF](assets/miracle_winter_academy_preliminary_programme.pdf).
+Practical sessions link to their workshop page.
 
 <span class="pill lecture">Lecture</span> plenary talk &nbsp;
 <span class="pill all">All</span> practical for all participants &nbsp;
@@ -13,9 +11,10 @@
     | Time | Session | Track | Speaker |
     |---|---|---|---|
     | 09:00–09:30 | **Welcome and course introduction**<br>Course overview, track organisation and practical information. | | |
-    | 09:30–10:30 | **Opening lecture: Acute leukaemias in children with Down syndrome: diagnosis, treatment and follow-up** | <span class="pill lecture">Lecture</span> | Jan-Hennig Klusmann (Frankfurt) |
-    | 10:30–10:50 | <span class="break">Coffee break</span> | | |
-    | 10:50–11:35 | **MRD in ALL: NGS versus qPCR targeted to IG/TR rearrangements, and why biology matters** | <span class="pill lecture">Lecture</span> | Jan Trka / Eva Froňková |
+    | 09:30–10:00 | **Opening lecture: Natural history of CLIP and how we do MRD in paediatric AML** | <span class="pill lecture">Lecture</span> | Jan Trka |
+    | 10:00–10:40 | **Antigen Receptor Analysis in Hematological Malignancies: Clonality, MRD and Repertoire. Methods and Pitfalls** | <span class="pill lecture">Lecture</span> | Eva Froňková |
+    | 10:40–11:00 | <span class="break">Coffee break</span> | | |
+    | 11:00–11:30 | **Science in the Age of Agentic AI: A Practical Perspective** | <span class="pill lecture">Lecture</span> | Jan Stuchlý |
     | 11:35–12:45 | **[Environment setup and terminal essentials](workshops/environment-setup.md)** | <span class="pill all">All</span> | |
     | 12:45–13:45 | <span class="break">Lunch</span> | | |
     | 13:45–15:15 | **[Version control with Git](workshops/git.md#basic)** | <span class="pill basic">Basic</span> | |
@@ -70,13 +69,14 @@
 
 ## Lecture abstracts
 
-**Acute leukaemias in children with Down syndrome: diagnosis, treatment and follow-up**
-: *Jan-Hennig Klusmann (Frankfurt)* · Mon 09:30
-: Diagnosis, treatment and follow-up of acute leukaemias in children with Down syndrome.
+**Opening lecture: Natural history of CLIP and how we do MRD in paediatric AML**
+: *Jan Trka* · Mon 09:30
 
-**MRD in ALL: NGS versus qPCR targeted to IG/TR rearrangements, and why biology matters**
-: *Jan Trka / Eva Froňková* · Mon 10:50
-: Minimal residual disease assessment in ALL: NGS and qPCR targeting IG/TR rearrangements, and the biological context of result interpretation.
+**Antigen Receptor Analysis in Hematological Malignancies: Clonality, MRD and Repertoire. Methods and Pitfalls**
+: *Eva Froňková* · Mon 10:00
+
+**Science in the Age of Agentic AI: A Practical Perspective**
+: *Jan Stuchlý* · Mon 11:00
 
 **Computational foundations of single-cell data analysis**
 : *Jan Stuchlý* · Tue 09:00

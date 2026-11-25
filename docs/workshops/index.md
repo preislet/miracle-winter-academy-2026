@@ -30,5 +30,5 @@ Every session builds on the previous one. Git comes first because it is the safe
 AI-assisted work that follows: **commit → let the agent work → read the diff → keep or revert.**
 
 !!! note "Draft content"
-    The workshop descriptions are drafts based on the preliminary programme and will be refined by
+    The workshop descriptions are drafts based on the programme and will be refined by
     the instructors. Materials (slides, repositories, data) will be linked on each page.
