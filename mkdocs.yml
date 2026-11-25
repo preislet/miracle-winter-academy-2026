@@ -59,6 +59,7 @@ hooks:
 
 extra_javascript:
   - javascripts/checklist.js
+  - javascripts/calendar-menu.js
 
 markdown_extensions:
   - admonition

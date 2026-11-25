@@ -114,3 +114,55 @@
   border-color: var(--miracle-magenta);
   color: #fff;
 }
+
+/* "Add to calendar" dropdown (a <details> element without the admonition look) */
+.md-typeset details.cal-dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: none;
+  overflow: visible;
+  font-size: inherit;
+}
+.md-typeset details.cal-dropdown > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.625em 1.2em;
+  border-radius: 0.1rem;
+  margin: 0;
+  font-weight: 700;
+  list-style: none;
+}
+.md-typeset details.cal-dropdown > summary::-webkit-details-marker { display: none; }
+.md-typeset details.cal-dropdown > summary::before,
+.md-typeset details.cal-dropdown > summary::after { display: none; }
+.md-typeset details.cal-dropdown[open] > summary .twemoji:last-child { transform: rotate(180deg); }
+.md-typeset details.cal-dropdown .cal-menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 0.3rem);
+  left: 0;
+  min-width: 17rem;
+  padding: 0.3rem 0;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  box-shadow: var(--md-shadow-z2);
+}
+.md-typeset details.cal-dropdown .cal-menu ul { margin: 0; padding: 0; list-style: none; }
+.md-typeset details.cal-dropdown .cal-menu li { margin: 0; }
+.md-typeset details.cal-dropdown .cal-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  color: var(--md-default-fg-color);
+}
+.md-typeset details.cal-dropdown .cal-menu a:hover {
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+}
