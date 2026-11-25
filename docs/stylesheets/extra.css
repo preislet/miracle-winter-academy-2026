@@ -41,13 +41,11 @@
 
 /* Session meta line under workshop titles */
 .session-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.2rem;
   color: var(--md-default-fg-color--light);
   margin-top: -0.6rem;
   margin-bottom: 1.2rem;
 }
+.md-typeset .session-meta p { margin: 0 0 0.3rem; }
 
 /* Track pills */
 .pill {

@@ -3,8 +3,9 @@
 <div class="session-meta" markdown>
 :material-calendar: Thursday 3 Dec, 15:10–17:00
 :material-account-group: <span class="pill basic">Basic</span> <span class="pill advanced">Advanced</span> (parallel rooms)
-:material-human-male-board: MIRACLE Research Software Engineering team
 :material-laptop: Practical
+
+:material-human-male-board: <span class="pill basic">Basic</span> Tomáš Preisler, Sára Veselá &nbsp;&nbsp; <span class="pill advanced">Advanced</span> Jan Stuchlý, Luděk Svoboda
 </div>
 
 !!! abstract "Draft, to be confirmed by instructors"

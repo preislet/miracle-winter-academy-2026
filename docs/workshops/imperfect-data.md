@@ -4,6 +4,8 @@
 :material-calendar: Thursday 3 Dec, 10:20–12:20
 :material-account-group: <span class="pill all">All participants</span>
 :material-laptop: Practical
+
+:material-human-male-board: John Jacobs, Costa Bachas
 </div>
 
 !!! abstract "Draft, to be confirmed by instructors"

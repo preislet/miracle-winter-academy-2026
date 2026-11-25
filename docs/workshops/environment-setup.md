@@ -3,8 +3,9 @@
 <div class="session-meta" markdown>
 :material-calendar: Monday 30 Nov, 11:30–12:45
 :material-account-group: <span class="pill all">All participants</span>
-:material-human-male-board: MIRACLE Research Software Engineering team
 :material-laptop: Practical
+
+:material-human-male-board: Jan Stuchlý, Tomáš Preisler, Luděk Svoboda, Sára Veselá
 </div>
 
 !!! abstract "Draft, to be confirmed by instructors"
