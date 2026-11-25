@@ -74,5 +74,6 @@ it. Git gives you that. This session builds the **review loop** used for the res
 
 ## Further reading
 
+- [Cheat sheet: Git commands](../cheatsheet.md#git)
 - [Pro Git book](https://git-scm.com/book/en/v2), chapters 1–3
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)

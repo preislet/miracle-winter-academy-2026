@@ -45,4 +45,4 @@ agent so that it is **safe by default**.
 ## Materials
 
 - *Slides: to be added*
-- Cheat sheet: terminal commands. *To be added*
+- [Cheat sheet](../cheatsheet.md): terminal, Git, Conda and Claude Code commands
