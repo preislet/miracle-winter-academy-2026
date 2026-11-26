@@ -18,7 +18,8 @@ lecture *Selected topics from statistics*.
 ## Learning goals
 
 - Recognise typical data-quality problems in clinical datasets
-- Curate an unstructured dataset in Excel and a structured one in LogiqSuite/LogiqAnalytics
+- Curate an unstructured dataset in Excel, and see how a dedicated curation tool
+  (LogiqSuite/LogiqAnalytics) handles structured data
 - Understand types of missingness and apply simple imputation methods
 - See how curation and imputation choices affect downstream statistical conclusions
 
@@ -27,8 +28,8 @@ lecture *Selected topics from statistics*.
 1. **Short introduction:** data quality, curation principles and types of missing data.
 2. **Curation in Excel:** clean an unstructured synthetic dataset (units, codes, dates, duplicates)
    and document every change.
-3. **Curation in LogiqSuite / LogiqAnalytics:** the same task on structured data in a dedicated
-   environment.
+3. **Demonstration of curation in LogiqSuite / LogiqAnalytics:** the instructor shows the same
+   task on structured data in a dedicated curation environment.
 4. **Imputation:** compare complete-case analysis with simple and model-based imputation.
 5. **Statistics in practice:** run the same analysis on the different versions of the data and
    discuss how much the conclusions change.
