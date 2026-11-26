@@ -112,10 +112,22 @@ jobs:
           & 'C:\Program Files\Git\bin\bash.exe' -lc 'command -v claude && claude --version'
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
+      - name: claude after the guide's PATH step (Windows)
+        id: s99
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          [Environment]::SetEnvironmentVariable('Path', [Environment]::GetEnvironmentVariable('Path', 'User') + ";$env:USERPROFILE\.local\bin", 'User')
+          $env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
+          Get-Command claude -ErrorAction Stop | Select-Object -ExpandProperty Source
+          claude --version
+          & 'C:\Program Files\Git\bin\bash.exe' -lc 'command -v claude && claude --version'
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
       - name: Report step outcomes
         if: always()
         shell: bash
-        run: echo "::notice title=Step outcomes (windows)::${{ steps.s01.outcome }} | Pre-installed state (Git, R, conda, Claude)%0A${{ steps.s02.outcome }} | R from CRAN (Windows installer, defaults)%0A${{ steps.s03.outcome }} | Course R packages (personal library)%0A${{ steps.s04.outcome }} | Advanced R (BiocManager + zellkonverter)%0A${{ steps.s05.outcome }} | Miniforge (Just Me, default location) + conda init bash%0A${{ steps.s06.outcome }} | conda in a new Git Bash window%0A${{ steps.s07.outcome }} | Course environment from the live site (Git Bash)%0A${{ steps.s08.outcome }} | Setup-check command for Python (Git Bash)%0A${{ steps.s09.outcome }} | Advanced Python (scvi-tools + muon)%0A${{ steps.s10.outcome }} | Claude Code installer (PowerShell)%0A${{ steps.s11.outcome }} | claude in a new terminal (PowerShell and Git Bash)"
+        run: echo "::notice title=Step outcomes (windows)::${{ steps.s99.outcome }} | claude after the guide's PATH step (Windows)%0A${{ steps.s01.outcome }} | Pre-installed state (Git, R, conda, Claude)%0A${{ steps.s02.outcome }} | R from CRAN (Windows installer, defaults)%0A${{ steps.s03.outcome }} | Course R packages (personal library)%0A${{ steps.s04.outcome }} | Advanced R (BiocManager + zellkonverter)%0A${{ steps.s05.outcome }} | Miniforge (Just Me, default location) + conda init bash%0A${{ steps.s06.outcome }} | conda in a new Git Bash window%0A${{ steps.s07.outcome }} | Course environment from the live site (Git Bash)%0A${{ steps.s08.outcome }} | Setup-check command for Python (Git Bash)%0A${{ steps.s09.outcome }} | Advanced Python (scvi-tools + muon)%0A${{ steps.s10.outcome }} | Claude Code installer (PowerShell)%0A${{ steps.s11.outcome }} | claude in a new terminal (PowerShell and Git Bash)"
   macos:
     runs-on: macos-latest
     timeout-minutes: 90

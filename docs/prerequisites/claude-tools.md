@@ -57,7 +57,13 @@ If the installer ends with a note that **`~/.local/bin` is not in your PATH**, r
 
 === "Windows"
 
-    Run the command that the installer shows, then open a new terminal.
+    In **PowerShell**:
+
+    ```powershell
+    [Environment]::SetEnvironmentVariable('Path', [Environment]::GetEnvironmentVariable('Path', 'User') + ";$env:USERPROFILE\.local\bin", 'User')
+    ```
+
+    Then close all terminals and open a new one.
 
 === "Linux"
 
