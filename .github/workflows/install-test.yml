@@ -1,0 +1,203 @@
+# Walks through the prerequisites on fresh GitHub-hosted Windows and macOS machines.
+# Runs when this file changes, or manually from the Actions tab. Does not deploy anything.
+name: Install test (prerequisites)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/install-test.yml]
+
+permissions:
+  contents: read
+
+env:
+  SITE: https://preislet.github.io/miracle-winter-academy-2026
+  R_PKGS: "'tidyverse','here','testthat','bench','renv','reticulate'"
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - name: Pre-installed state (Git, R, conda, Claude)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          git --version
+          foreach ($c in 'R','Rscript','conda','claude') { "{0}: {1}" -f $c, ((Get-Command $c -ErrorAction SilentlyContinue).Source ?? 'not found') }
+          "Git credential helpers:"; git config --show-origin --get-all credential.helper
+
+      - name: R from CRAN (Windows installer, defaults)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $f = [regex]::Match((Invoke-WebRequest https://cloud.r-project.org/bin/windows/base/release.html).Content, 'R-[0-9.]+-win\.exe').Value
+          Invoke-WebRequest "https://cloud.r-project.org/bin/windows/base/$f" -OutFile $f
+          Start-Process -Wait -FilePath ".\$f" -ArgumentList '/VERYSILENT','/NORESTART'
+          $rs = (Get-ChildItem 'C:\Program Files\R\*\bin\Rscript.exe' | Sort-Object FullName | Select-Object -Last 1).FullName
+          "RSCRIPT=$rs" >> $env:GITHUB_ENV
+          & $rs --version
+
+      - name: Course R packages (personal library)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); dir.create(lib, recursive = TRUE, showWarnings = FALSE); .libPaths(lib); install.packages(c($env:R_PKGS), repos = 'https://cloud.r-project.org')"
+          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); pkgs <- c($env:R_PKGS); m <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]; if (length(m)) { message('Missing: ', paste(m, collapse = ', ')); quit(status = 1) } else message('R packages OK')"
+
+      - name: Advanced R (BiocManager + zellkonverter)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); install.packages('BiocManager', repos = 'https://cloud.r-project.org'); BiocManager::install(c('SingleCellExperiment', 'zellkonverter'), ask = FALSE, update = FALSE)"
+          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); quit(status = !requireNamespace('zellkonverter', quietly = TRUE))"
+
+      - name: Miniforge (Just Me, default location) + conda init bash
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          Invoke-WebRequest https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe -OutFile Miniforge3-Windows-x86_64.exe
+          Start-Process -Wait -FilePath .\Miniforge3-Windows-x86_64.exe -ArgumentList '/InstallationType=JustMe','/S',"/D=$env:USERPROFILE\miniforge3"
+          & "$env:USERPROFILE\miniforge3\Scripts\conda.exe" --version
+          & "$env:USERPROFILE\miniforge3\Scripts\conda.exe" init bash
+
+      - name: conda in a new Git Bash window
+        continue-on-error: true
+        shell: bash
+        run: unset CONDA; bash -lic 'command -v conda && conda --version'
+
+      - name: Course environment from the live site (Git Bash)
+        continue-on-error: true
+        shell: bash
+        run: unset CONDA; bash -lic "cd ~ && curl -sL -O $SITE/prerequisites/environment.yml && conda env create -q -f environment.yml && conda activate miracle && python -c 'import scanpy; print(\"scanpy OK\")'"
+
+      - name: Setup-check command for Python (Git Bash)
+        continue-on-error: true
+        shell: bash
+        run: unset CONDA; bash -lic "conda run -n miracle python -c 'import scanpy, anndata, leidenalg; print(\"Python OK\")'"
+
+      - name: Advanced Python (scvi-tools + muon)
+        continue-on-error: true
+        shell: bash
+        run: unset CONDA; bash -lic "conda activate miracle && conda install -q -y -c conda-forge scvi-tools muon && python -c 'import scvi, muon; print(\"scvi-tools and muon OK\")'"
+
+      - name: Claude Code installer (PowerShell)
+        continue-on-error: true
+        shell: pwsh
+        run: irm https://claude.ai/install.ps1 | iex
+
+      - name: claude in a new terminal (PowerShell and Git Bash)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          # a new window gets PATH from the registry, not from this process
+          $env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
+          "User PATH has .local\bin: " + ([Environment]::GetEnvironmentVariable('Path','User') -like '*\.local\bin*')
+          Get-Command claude -ErrorAction Stop | Select-Object -ExpandProperty Source
+          claude --version
+          & 'C:\Program Files\Git\bin\bash.exe' -lc 'command -v claude && claude --version'
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+  macos:
+    runs-on: macos-latest
+    timeout-minutes: 90
+    steps:
+      - name: Pre-installed state
+        continue-on-error: true
+        run: |
+          sw_vers; uname -m
+          for c in R Rscript conda claude git; do printf '%s: %s\n' "$c" "$(command -v $c || echo 'not found')"; done
+          stat -f "home of runner: %Sp %Su:%Sg" ~
+
+      - name: Create miracle-course (standard user)
+        continue-on-error: true
+        run: |
+          sudo sysadminctl -addUser miracle-course -fullName "MIRACLE Course" -password 'Miracle-Test-2026' -home /Users/miracle-course
+          sudo createhomedir -c -u miracle-course >/dev/null
+          id miracle-course
+          if dseditgroup -o checkmember -m miracle-course admin | grep -q "is a member"; then echo "is admin"; exit 1; fi
+          echo "standard user: OK"
+
+      - name: Separation without the fix (file directly in the admin's home)
+        continue-on-error: true
+        run: |
+          echo "private" > ~/private-test.txt && chmod 644 ~/private-test.txt
+          cd /tmp
+          if sudo -u miracle-course cat /Users/runner/private-test.txt >/dev/null 2>&1; then
+            echo "::warning::miracle-course CAN read files directly in the admin's home (group staff)"; exit 1
+          fi
+          echo "denied: OK"
+
+      - name: Separation after chmod 700 ~
+        continue-on-error: true
+        run: |
+          chmod 700 ~
+          cd /tmp
+          if sudo -u miracle-course cat /Users/runner/private-test.txt >/dev/null 2>&1 || sudo -u miracle-course ls /Users/runner >/dev/null 2>&1; then exit 1; fi
+          echo "denied after chmod 700: OK"
+
+      - name: R from CRAN (.pkg)
+        continue-on-error: true
+        run: |
+          pkg=$(curl -s https://cloud.r-project.org/bin/macosx/ | grep -oE 'sonoma-arm64/base/R-[0-9.]+-arm64\.pkg' | head -1)
+          curl -sL -o /tmp/R.pkg "https://cloud.r-project.org/bin/macosx/$pkg"
+          sudo installer -pkg /tmp/R.pkg -target / >/dev/null
+          R --version | head -1
+
+      - name: Course R packages as miracle-course (personal library)
+        continue-on-error: true
+        run: |
+          cd /tmp
+          sudo -u miracle-course -i Rscript -e "lib <- Sys.getenv('R_LIBS_USER'); dir.create(lib, recursive = TRUE, showWarnings = FALSE); .libPaths(lib); install.packages(c($R_PKGS), repos = 'https://cloud.r-project.org')" >/tmp/rpkg.log 2>&1
+          sudo -u miracle-course -i Rscript -e "pkgs <- c($R_PKGS); m <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]; if (length(m)) { message('Missing: ', paste(m, collapse = ', ')); quit(status = 1) } else message('R packages OK')"
+
+      - name: Advanced R as miracle-course (zellkonverter)
+        continue-on-error: true
+        run: |
+          cd /tmp
+          sudo -u miracle-course -i Rscript -e "install.packages('BiocManager', repos = 'https://cloud.r-project.org'); BiocManager::install(c('SingleCellExperiment', 'zellkonverter'), ask = FALSE, update = FALSE)" >/tmp/bioc.log 2>&1
+          sudo -u miracle-course -i Rscript -e "quit(status = !requireNamespace('zellkonverter', quietly = TRUE))"
+
+      - name: Git as miracle-course
+        continue-on-error: true
+        run: cd /tmp && sudo -u miracle-course -i git --version
+
+      - name: Miniforge as miracle-course (guide commands, init = yes)
+        continue-on-error: true
+        run: |
+          cd /tmp
+          sudo -u miracle-course -i bash -c 'curl -sL -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && bash Miniforge3-$(uname)-$(uname -m).sh -b && ~/miniforge3/bin/conda init zsh'
+
+      - name: conda in a new zsh window
+        continue-on-error: true
+        run: cd /tmp && sudo -u miracle-course -i zsh -ic 'command -v conda && conda --version'
+
+      - name: Course environment from the live site
+        continue-on-error: true
+        run: |
+          cd /tmp
+          sudo -u miracle-course -i zsh -ic "curl -sL -O $SITE/prerequisites/environment.yml && conda env create -q -f environment.yml && conda activate miracle && python -c 'import scanpy; print(\"scanpy OK\")'"
+
+      - name: Setup-check command for Python
+        continue-on-error: true
+        run: cd /tmp && sudo -u miracle-course -i zsh -ic "conda run -n miracle python -c 'import scanpy, anndata, leidenalg; print(\"Python OK\")'"
+
+      - name: Advanced Python (scvi-tools + muon)
+        continue-on-error: true
+        run: cd /tmp && sudo -u miracle-course -i zsh -ic "conda activate miracle && conda install -q -y -c conda-forge scvi-tools muon && python -c 'import scvi, muon; print(\"scvi-tools and muon OK\")'"
+
+      - name: Claude Code installer as miracle-course
+        continue-on-error: true
+        run: cd /tmp && sudo -u miracle-course -i bash -c 'curl -fsSL https://claude.ai/install.sh | bash'
+
+      - name: claude in a new zsh window (before the PATH step)
+        continue-on-error: true
+        run: cd /tmp && sudo -u miracle-course -i zsh -ic 'command -v claude && claude --version'
+
+      - name: claude after the guide's PATH step
+        continue-on-error: true
+        run: |
+          cd /tmp
+          sudo -u miracle-course -i zsh -c "echo 'export PATH=\"\$HOME/.local/bin:\$PATH\"' >> ~/.zshrc"
+          sudo -u miracle-course -i zsh -ic 'command -v claude && claude --version'
