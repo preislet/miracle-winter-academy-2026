@@ -76,16 +76,17 @@ Use Terminal on macOS, your terminal app on Linux, and **Git Bash** on Windows.
 
 ## GitHub access (limited token)
 
-Set up together in the [Git session](workshops/git.md#connecting-to-github-safely). The token
-works for **one repository** and **expires after 7 days**.
+Full step-by-step guide: [Connecting to GitHub safely](workshops/git.md#connecting-to-github-safely).
 
 | Step | What to do |
 |---|---|
-| 1 | On github.com, create a dedicated repository for the Academy |
-| 2 | *Settings* → *Developer settings* → *Fine-grained tokens* → *Generate new token*: expiration **7 days**, *Only select repositories* → your Academy repository, **Contents: Read and write**, Pull requests only if needed, nothing else |
-| 3 | `git config --global credential.https://github.com.useHttpPath true` |
-| 4 | `git remote add origin https://github.com/<you>/<repo>.git` |
-| 5 | `git push -u origin main`. When Git asks for a password, paste the token |
+| 1 | github.com → **+** → *New repository* → `miracle-academy`, Private, empty |
+| 2 | Profile picture → *Settings* → *Developer settings* → *Fine-grained tokens* → *Generate new token*: **7 days**, *Only select repositories* → `miracle-academy`, **Contents: Read and write** |
+| 3 | In RStudio / Positron: *Terminal* → *New Terminal* (opens in your project) |
+| 4 | `curl -fsSL https://preislet.github.io/miracle-winter-academy-2026/github-setup.sh -o ~/github-setup.sh && bash ~/github-setup.sh`, then answer the 3 questions |
+| 5 | `git push -u origin main` |
+
+New token after 7 days: repeat steps 2 and 4.
 
 !!! danger "Never run `gh auth login` in the course account"
 

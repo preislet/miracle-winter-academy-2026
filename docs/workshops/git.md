@@ -77,31 +77,84 @@ it. Git gives you that. This session builds the **review loop** used for the res
 
 ## Connecting to GitHub safely
 
-We set this up together during the session. The AI agent works in your course account, so we
-never give that account full access to GitHub. Instead, Git gets a **token that only works for
-one repository and expires after a week**.
+We do this together during the session, so don't worry if it looks long. The AI agent works in
+your course account, so we never give that account full access to GitHub. Instead your project
+gets a **token**: a password that only works for **one repository** and **expires after 7 days**.
+It is stored only inside the project, and Git uses it automatically, so you never have to type it.
 
-1. On github.com, **create a dedicated repository** for the Winter Academy.
-2. Generate a **fine-grained personal access token**: *Settings* → *Developer settings* →
-   *Personal access tokens* → *Fine-grained tokens* → *Generate new token*:
+### 1. Create the repository on GitHub
+
+1. Go to [github.com](https://github.com) and sign in.
+2. Click **+** (top right) → **New repository**.
+3. Repository name: `miracle-academy`. Choose **Private**.
+4. Do **not** tick *Add a README*, *.gitignore* or *license*. The repository must be empty.
+5. Click **Create repository**.
+
+### 2. Create the token
+
+1. Click your **profile picture** (top right) → **Settings**.
+2. At the very bottom of the left menu: **Developer settings** → **Personal access tokens** →
+   **Fine-grained tokens** → **Generate new token**.
+3. Fill in:
+    - **Token name:** `miracle-academy`
     - **Expiration:** 7 days
-    - **Repository access:** *Only select repositories* → your Academy repository
-    - **Contents:** Read and write
-    - **Metadata:** Read-only (granted automatically)
-    - **Pull requests:** Read and write, only if needed
-    - Leave all other permissions disabled.
-3. Tell Git to keep credentials separate for each repository URL:
+    - **Repository access:** *Only select repositories* → choose `miracle-academy`
+    - **Permissions** → *Repository permissions* → **Contents:** *Read and write*
+      (*Metadata: Read-only* is added automatically). Leave everything else as it is.
+4. Click **Generate token** and **copy** it (it starts with `github_pat_`). GitHub shows it only
+   once; if you lose it, simply create a new one.
 
-    ```bash
-    git config --global credential.https://github.com.useHttpPath true
-    ```
+### 3. Open a terminal in your project
 
-4. Use the **HTTPS** address of the repository. When Git asks for a password, paste the token:
+No need to find the folder by hand. Open your project in RStudio or Positron, then:
 
-    ```bash
-    git remote add origin https://github.com/<you>/<academy-repo>.git
-    git push -u origin main
-    ```
+=== "RStudio"
+
+    *Tools* → *Terminal* → *New Terminal*. The terminal opens at the bottom, already in your
+    project folder.
+
+=== "Positron"
+
+    *Terminal* → *New Terminal*. The terminal opens at the bottom, already in your project
+    folder.
+
+On Windows, the terminal should be **Git Bash** (in RStudio: *Tools* → *Global Options* →
+*Terminal* → *New terminals open with: Git Bash*).
+
+### 4. Run the setup script
+
+Copy this into the terminal and press ++enter++:
+
+```bash
+curl -fsSL https://preislet.github.io/miracle-winter-academy-2026/github-setup.sh -o ~/github-setup.sh && bash ~/github-setup.sh
+```
+
+The script asks three questions:
+
+1. your **GitHub username**,
+2. the **repository name** (`miracle-academy`),
+3. the **token**: paste it and press ++enter++. Nothing appears while you paste. That is on
+   purpose, so nobody can read it over your shoulder.
+
+At the end it should say **`OK: connected`**. Then upload your work:
+
+```bash
+git push -u origin main
+```
+
+??? info "What the script does (only in this project, nothing global)"
+    - Saves your username and token in a file called `.env` that only you can read.
+    - Adds `.env` to `.gitignore`, so the token is **never committed** or uploaded.
+    - Tells Git to take the password from `.env`, and switches off the system password stores
+      (macOS Keychain, Windows Credential Manager) for this project, so the token is not saved
+      anywhere else.
+    - Sets the GitHub address of the project.
+    - Adds a Claude Code rule (`.claude/settings.json`) that forbids the agent to read `.env`.
+
+    You can [read the script](../github-setup.sh) before running it.
+
+**After 7 days**, or if something went wrong: create a new token (step 2) and run the same
+command again (step 4). It simply replaces the old token.
 
 !!! danger "Never run `gh auth login` in the course account"
     It would give the account, and with it the agent, access to all your repositories.
