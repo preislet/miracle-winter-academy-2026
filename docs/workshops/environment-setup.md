@@ -40,7 +40,7 @@ agent so that it is **safe by default**.
     - Watch the agent ask for permission before reading, editing or running anything
     - Permission modes: what "allow once", "allow always" and "deny" mean
     - Sandboxing: limiting the agent to a folder and network access, and why it matters for
-      medical data
+      sensitive data
 4. **Wrap-up (≈10 min).** Checklist: every participant leaves with a green setup check.
 
 ## Materials
