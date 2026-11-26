@@ -15,10 +15,6 @@ values. In this practical you curate synthetic, deliberately uncurated leukaemia
 missing values and see how these choices change the statistical results. It follows the morning
 lecture *Selected topics from statistics*.
 
-!!! info "Before this session"
-    Access to **LogiqSuite / LogiqAnalytics** (arranged by the organisers) and **Excel** or
-    another spreadsheet program. R with the [course packages](../prerequisites/r-rstudio.md).
-
 ## Learning goals
 
 - Recognise typical data-quality problems in clinical datasets
@@ -39,4 +35,4 @@ lecture *Selected topics from statistics*.
 
 ## Materials
 
-- *Synthetic datasets and LogiqSuite access: to be added*
+- *Synthetic datasets: to be added*

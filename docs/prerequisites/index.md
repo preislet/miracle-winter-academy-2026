@@ -45,7 +45,6 @@ On each page below, pick your operating system once and the choice applies acros
 |---|---|---|
 | **GitHub** ([github.com/signup](https://github.com/signup)) | Git sessions, collaborative workflows | Free account. Use an email address you can access during the course. |
 | **Claude** ([claude.ai](https://claude.ai)) | AI-assisted coding and science sessions | You will get an **email invitation to the MIRACLE Academy team**. No paid plan of your own needed. See [Claude](claude-tools.md). |
-| **LogiqSuite / LogiqAnalytics** | Thursday's *Working with imperfect data* | Access is arranged by the organisers. Details to follow. |
 
 ## Expected knowledge
 
