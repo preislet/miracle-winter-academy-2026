@@ -81,7 +81,7 @@ Full step-by-step guide: [Connecting to GitHub safely](workshops/git.md#connecti
 | Step | What to do |
 |---|---|
 | 1 | github.com → **+** → *New repository* → `miracle-academy`, Private, empty |
-| 2 | Profile picture → *Settings* → *Developer settings* → *Fine-grained tokens* → *Generate new token*: **7 days**, *Only select repositories* → `miracle-academy`, **Contents: Read and write** |
+| 2 | Profile picture → *Settings* → *Developer settings* → *Fine-grained tokens* → *Generate new token*: **7 days**, *Only select repositories* → `miracle-academy`, **Contents: Read and write** (Advanced: also **Workflows: Read and write**) |
 | 3 | `git config --global credential.https://github.com.useHttpPath true` |
 | 4 | `git remote add origin https://github.com/<you>/miracle-academy.git` |
 | 5 | `git push -u origin main`. Username: your GitHub username, Password: **paste the token** |
@@ -92,7 +92,7 @@ New token after 7 days: repeat step 2, then `git push` again.
 
 ## Conda
 
-On Windows, run these in **Miniforge Prompt** unless you set up Git Bash with `conda init bash`.
+On Windows, run these in **Git Bash** (after `conda init bash`, see [Python and Conda](prerequisites/python-conda.md)).
 
 | Command | What it does |
 |---|---|
@@ -139,7 +139,7 @@ On Windows, run these in **Miniforge Prompt** unless you set up Git Bash with `c
 | Run current line or selection | ++ctrl+enter++ | ++cmd+enter++ |
 | Run the whole file | ++ctrl+shift+enter++ | ++cmd+shift+enter++ |
 | Insert `<-` | ++alt+minus++ | ++option+minus++ |
-| Insert pipe `|>` | ++ctrl+shift+m++ | ++cmd+shift+m++ |
+| Insert pipe `%>%` (or `|>` with *Use native pipe operator* on in *Global Options* → *Code*) | ++ctrl+shift+m++ | ++cmd+shift+m++ |
 | Clear the console | ++ctrl+l++ | ++ctrl+l++ |
 
 Most RStudio shortcuts also work in Positron.

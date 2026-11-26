@@ -18,6 +18,9 @@ All pages are Markdown files in `docs/`:
 | `docs/prerequisites/` | Installation instructions (macOS / Windows / Linux tabs) |
 | `docs/prerequisites/environment.yml` | Course Conda environment |
 | `docs/workshops/` | One page per workshop, Basic / Advanced tabs |
+| `docs/cheatsheet.md` | Command cheat sheet |
+| `hooks/calendar.py` | Builds the subscribable calendar from `docs/programme.md` on every build |
+| `.github/workflows/install-test.yml` | Walks through the prerequisites on Windows and macOS (run it from the Actions tab) |
 | `mkdocs.yml` | Site settings and navigation |
 
 Small edits: open a file on GitHub, click the pencil icon, commit. The site redeploys within

@@ -7,7 +7,7 @@ meet, such as the Python and single-cell practicals.
 
 !!! info "Install R and Conda first"
     Positron finds your existing R and Python installations automatically. Install
-    [R](r-rstudio.md) (4.2 or newer) and the [course Conda environment](python-conda.md) first.
+    [R](r-rstudio.md) (4.4 or newer) and the [course Conda environment](python-conda.md) first.
 
 ## Install Positron
 

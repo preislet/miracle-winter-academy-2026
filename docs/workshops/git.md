@@ -53,7 +53,7 @@ it. Git gives you that. This session builds the **review loop** used for the res
 
     ### Learning goals
 
-    - Work with branches, merges and pull requests in a shared repository
+    - Work with branches, merges and pull requests in your GitHub repository
     - Use `git worktree` to run several AI agents in parallel without them colliding
     - Run automated tests before merging changes
     - Review an AI-generated pull request critically
@@ -61,14 +61,15 @@ it. Git gives you that. This session builds the **review loop** used for the res
     ### What we will do
 
     1. **Quick recap** of the review loop: commit, diff, revert.
-    2. **Collaborative workflow.** Fork or clone a shared course repository, create feature
-       branches, open pull requests on GitHub, review a colleague's PR, resolve a merge conflict.
+    2. **Pull request workflow** in your `miracle-academy` repository: push a feature branch,
+       open a pull request on github.com, review it (including one the agent prepared), and
+       resolve a merge conflict.
     3. **Worktrees for parallel agents.** Create two worktrees from one repository, run an agent
        in each on a different task, then compare and merge the results.
     4. **Tests as a gate.** Add `testthat` (R) or `pytest` (Python) tests, run them before merging,
        and see a test catch an agent's subtle bug.
     5. **Optional: continuous integration.** A minimal GitHub Actions workflow that runs the tests
-       on every pull request.
+       on every pull request (your token needs the *Workflows* permission, see below).
 
     ### Materials
 
@@ -100,6 +101,8 @@ gets a **token**: a password that only works for **one repository** and **expire
     - **Repository access:** *Only select repositories* → choose `miracle-academy`
     - **Permissions** → *Repository permissions* → **Contents:** *Read and write*
       (*Metadata: Read-only* is added automatically). Leave everything else as it is.
+    - **Advanced track only:** also **Workflows:** *Read and write*, so you can push a GitHub
+      Actions workflow.
 4. Click **Generate token** and **copy** it (it starts with `github_pat_`). GitHub shows it only
    once; if you lose it, simply create a new one.
 

@@ -37,7 +37,8 @@ agent so that it is **safe by default**.
     - What an environment variable and `PATH` are, and why "command not found" happens
 3. **First contact with the AI agent (≈20 min).**
     - Create `~/miracle-academy` and start Claude Code *inside it*
-    - Watch the agent ask for permission before reading, editing or running anything
+    - Watch the agent ask for permission before editing files or running commands (reading
+      files inside the project folder is allowed by default)
     - Permission modes: what "allow once", "allow always" and "deny" mean
     - Sandboxing: limiting the agent to a folder and network access, and why it matters for
       sensitive data

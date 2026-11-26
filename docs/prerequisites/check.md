@@ -14,8 +14,8 @@ whoami        # miracle-course
 
 ## In the terminal
 
-Use Terminal on macOS/Linux and Git Bash on Windows. Run the `conda` lines in Miniforge Prompt
-if `conda` is not found in Git Bash.
+Use Terminal on macOS/Linux and Git Bash on Windows. If `conda` is not found in Git Bash, the
+`conda init bash` step on the [Python and Conda](python-conda.md) page is missing.
 
 ```bash
 git --version                 # git version 2.x

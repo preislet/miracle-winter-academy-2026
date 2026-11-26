@@ -68,7 +68,7 @@ From now on, everything for the course happens in this account.
 ## 3. Install everything there
 
 Work through the rest of the [prerequisites](index.md) **while signed in as `miracle-course`**: terminal,
-R and RStudio, Positron, Git and GitHub, Python and Conda, and Claude.
+R and RStudio, Git and GitHub, Python and Conda, Positron, and Claude.
 
 !!! info "Installers will ask for an administrator"
     Because `miracle-course` is a standard user, installers ask for an administrator's name and
@@ -137,6 +137,7 @@ readable by other users by default; `sudo chmod 750 /home/<your-username>` fixes
 - Always **sign in as `miracle-course`** for the course.
 - Keep course projects and data in the course account. Don't copy personal or sensitive data
   into it.
-- Log in only to Claude (your MIRACLE Academy team account). Don't connect Git or the GitHub CLI
-  to GitHub yourself: we set up a limited GitHub token together in the Git session.
+- Log in only to Claude (your MIRACLE Academy team account) and, in the Git session, to
+  github.com in the browser. Don't connect Git or the GitHub CLI to GitHub yourself: we set up a
+  limited GitHub token together in the Git session.
 - No VPN, network drives or cloud storage while you work in the course account.

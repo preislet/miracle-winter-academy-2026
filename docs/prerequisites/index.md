@@ -1,7 +1,7 @@
 # Prerequisites
 
 All practical sessions run on **your own laptop**, in a [separate user account](separate-account.md)
-just for the course. Please install everything below **before Monday 30 November 2026**, then run the [setup check](check.md). It takes roughly 1–2 hours,
+just for the course. Please install everything below **before Monday 30 November 2026**, then run the [setup check](check.md). It takes roughly 2–3 hours,
 most of it waiting for downloads.
 
 !!! tip "Stuck? Don't worry."
@@ -31,6 +31,8 @@ On each page below, pick your operating system once and the choice applies acros
 - [ ] [Python and Conda](python-conda.md): Miniforge and the `miracle` course environment
 - [ ] [Positron](positron.md): R + Python IDE from Posit
 - [ ] [Claude](claude-tools.md): Claude Code (terminal agent) and the Claude desktop app
+- [ ] A spreadsheet program: Excel, or the free [LibreOffice Calc](https://www.libreoffice.org/download/download-libreoffice/)
+      (for Thursday's *Working with imperfect data*)
 - [ ] [Check your setup](check.md): all checks pass
 
 ### Advanced track only

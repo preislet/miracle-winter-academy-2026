@@ -22,8 +22,9 @@ Data Analysis and AI-Assisted Science in Biomedical Research
 </div>
 
 !!! warning "Before you arrive: set up your laptop"
-    All practical sessions run on **your own laptop**. Please work through the
-    [prerequisites](prerequisites/index.md) **before Monday 30 November** and run the
+    All practical sessions run on **your own laptop**, in a
+    [separate user account](prerequisites/separate-account.md) just for the course. Please work
+    through the [prerequisites](prerequisites/index.md) **before Monday 30 November** and run the
     [setup check](prerequisites/check.md). Monday's *Environment setup* session is there to fix
     problems, not to start installing from scratch.
 

@@ -98,9 +98,9 @@ nav:
       - Separate user account: prerequisites/separate-account.md
       - Terminal basics: prerequisites/terminal.md
       - R and RStudio: prerequisites/r-rstudio.md
-      - Positron: prerequisites/positron.md
       - Git and GitHub: prerequisites/git.md
       - Python and Conda: prerequisites/python-conda.md
+      - Positron: prerequisites/positron.md
       - Claude: prerequisites/claude-tools.md
       - Check your setup: prerequisites/check.md
   - Programme: programme.md

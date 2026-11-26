@@ -6,9 +6,6 @@ environments so that the course packages don't clash with anything else on your 
 
 We use **Miniforge**, a minimal Conda installer that uses the free `conda-forge` channel.
 
-!!! info "Already have Anaconda or Miniconda?"
-    You can keep using it. Skip to [Create the course environment](#create-the-course-environment).
-
 ## Install Miniforge
 
 === "macOS"
@@ -26,10 +23,14 @@ We use **Miniforge**, a minimal Conda installer that uses the free `conda-forge`
     1. Download **Miniforge3-Windows-x86_64.exe** from
        [conda-forge.org/download](https://conda-forge.org/download/).
     2. Run it: *Just Me*, default location, keep the default checkboxes.
-    3. From the Start menu, open **Miniforge Prompt**. Use this prompt for all `conda` commands.
+    3. From the Start menu, open **Miniforge Prompt** and run:
 
-    ??? tip "Optional: use conda from Git Bash too"
-        In Miniforge Prompt run `conda init bash`, then open a new Git Bash window.
+        ```
+        conda init bash
+        ```
+
+    4. Close Miniforge Prompt and open a **new Git Bash** window. From now on, use Git Bash for
+       all `conda` commands: the AI agent runs in Git Bash and needs conda there.
 
 === "Linux"
 
@@ -51,7 +52,7 @@ conda --version
 
 1. Download the environment file:
    [:material-download: environment.yml](environment.yml){ download="environment.yml" .md-button }
-2. In the terminal (Miniforge Prompt on Windows), go to the folder where you saved it.
+2. In the terminal (Git Bash on Windows), go to the folder where you saved it.
    Usually that is your Downloads folder:
 
     ```bash

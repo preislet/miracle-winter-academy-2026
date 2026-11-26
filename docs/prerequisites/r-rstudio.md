@@ -63,6 +63,9 @@ install.packages(c(
 ))
 ```
 
+If asked *"Would you like to use a personal library instead?"*, answer **yes** (twice). This is
+normal in the [course account](separate-account.md), which is not an administrator.
+
 If asked *"Do you want to install from sources the packages which need compilation?"*,
 answer **No**.
 

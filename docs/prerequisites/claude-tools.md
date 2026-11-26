@@ -3,7 +3,8 @@
 Two Claude tools are used during the course:
 
 - **Claude Code**: an AI coding agent that runs in your terminal, reads and edits files in your
-  project and runs commands, always asking for your permission first. Used in the *AI-assisted
+  project and runs commands. It asks for your permission before editing files or running
+  commands. Used in the *AI-assisted
   coding* and *single-cell* practicals.
 - **Claude desktop app / Claude Science**: used in the *AI-assisted science* sessions for
   literature search and scientific workflows.
@@ -39,7 +40,7 @@ Two Claude tools are used during the course:
     irm https://claude.ai/install.ps1 | iex
     ```
 
-    Close and reopen your terminal afterwards. Using WSL2? Follow the *Linux* tab inside WSL instead.
+    Close and reopen your terminal afterwards.
 
 === "Linux"
 
@@ -82,7 +83,7 @@ If it says `command not found`, the PATH step above is missing.
 ### First start (once you have access)
 
 ```bash
-mkdir -p ~/miracle-test && cd ~/miracle-test
+mkdir -p ~/miracle-academy && cd ~/miracle-academy
 claude
 ```
 
