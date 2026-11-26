@@ -88,7 +88,7 @@ claude
 
 Follow the login prompt in your browser. Type `/exit` to quit.
 
-!!! danger "Only in the course account, never on real patient data"
+!!! danger "Only in the course account, never on sensitive data"
     Use Claude Code only while signed in to your [separate course account](separate-account.md),
     and always `cd` into a dedicated project folder first. The agent can read files in the folder
     where it is started. Sandboxing and permissions are covered on Monday and Wednesday.

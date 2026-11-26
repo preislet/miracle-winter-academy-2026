@@ -135,7 +135,7 @@ readable by other users by default; `sudo chmod 750 /home/<your-username>` fixes
 ## During the course
 
 - Always **sign in as `miracle-course`** for the course.
-- Keep course projects and data in the course account. Don't copy personal or real patient data
+- Keep course projects and data in the course account. Don't copy personal or sensitive data
   into it.
 - Log in only to Claude (your MIRACLE Academy team account). Don't connect Git or the GitHub CLI
   to GitHub yourself: we set up a limited GitHub token together in the Git session.

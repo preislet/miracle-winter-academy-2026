@@ -148,7 +148,7 @@ Most RStudio shortcuts also work in Positron.
 
 !!! danger "Before you start the agent"
     `cd` into your project folder first, and commit. Never start Claude Code in your home folder or
-    in a folder with real patient data.
+    in a folder with sensitive data.
 
 **In the terminal**
 
