@@ -82,11 +82,11 @@ Full step-by-step guide: [Connecting to GitHub safely](workshops/git.md#connecti
 |---|---|
 | 1 | github.com → **+** → *New repository* → `miracle-academy`, Private, empty |
 | 2 | Profile picture → *Settings* → *Developer settings* → *Fine-grained tokens* → *Generate new token*: **7 days**, *Only select repositories* → `miracle-academy`, **Contents: Read and write** |
-| 3 | In RStudio / Positron: *Terminal* → *New Terminal* (opens in your project) |
-| 4 | `curl -fsSL https://preislet.github.io/miracle-winter-academy-2026/github-setup.sh -o ~/github-setup.sh && bash ~/github-setup.sh`, then answer the 3 questions |
-| 5 | `git push -u origin main` |
+| 3 | `git config --global credential.https://github.com.useHttpPath true` |
+| 4 | `git remote add origin https://github.com/<you>/miracle-academy.git` |
+| 5 | `git push -u origin main`. Username: your GitHub username, Password: **paste the token** |
 
-New token after 7 days: repeat steps 2 and 4.
+New token after 7 days: repeat step 2, then `git push` again.
 
 !!! danger "Never run `gh auth login` in the course account"
 

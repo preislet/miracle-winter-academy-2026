@@ -80,7 +80,6 @@ it. Git gives you that. This session builds the **review loop** used for the res
 We do this together during the session, so don't worry if it looks long. The AI agent works in
 your course account, so we never give that account full access to GitHub. Instead your project
 gets a **token**: a password that only works for **one repository** and **expires after 7 days**.
-It is stored only inside the project, and Git uses it automatically, so you never have to type it.
 
 ### 1. Create the repository on GitHub
 
@@ -104,57 +103,56 @@ It is stored only inside the project, and Git uses it automatically, so you neve
 4. Click **Generate token** and **copy** it (it starts with `github_pat_`). GitHub shows it only
    once; if you lose it, simply create a new one.
 
-### 3. Open a terminal in your project
+### 3. Connect your project
 
-No need to find the folder by hand. Open your project in RStudio or Positron, then:
-
-=== "RStudio"
-
-    *Tools* → *Terminal* → *New Terminal*. The terminal opens at the bottom, already in your
-    project folder.
-
-=== "Positron"
-
-    *Terminal* → *New Terminal*. The terminal opens at the bottom, already in your project
-    folder.
-
-On Windows, the terminal should be **Git Bash** (in RStudio: *Tools* → *Global Options* →
-*Terminal* → *New terminals open with: Git Bash*).
-
-### 4. Run the setup script
-
-Copy this into the terminal and press ++enter++:
+In the terminal, go to your project folder (replace the path with yours):
 
 ```bash
-curl -fsSL https://preislet.github.io/miracle-winter-academy-2026/github-setup.sh -o ~/github-setup.sh && bash ~/github-setup.sh
+cd ~/miracle-academy
 ```
 
-The script asks three questions:
-
-1. your **GitHub username**,
-2. the **repository name** (`miracle-academy`),
-3. the **token**: paste it and press ++enter++. Nothing appears while you paste. That is on
-   purpose, so nobody can read it over your shoulder.
-
-At the end it should say **`OK: connected`**. Then upload your work:
+Tell Git to keep GitHub passwords **separate for each repository**, instead of one password for
+all of GitHub:
 
 ```bash
+git config --global credential.https://github.com.useHttpPath true
+```
+
+Add the GitHub address of the repository (use **HTTPS**, replace `<you>` with your GitHub
+username) and upload your work:
+
+```bash
+git remote add origin https://github.com/<you>/miracle-academy.git
 git push -u origin main
 ```
 
-??? info "What the script does (only in this project, nothing global)"
-    - Saves your username and token in a file called `.env` that only you can read.
-    - Adds `.env` to `.gitignore`, so the token is **never committed** or uploaded.
-    - Tells Git to take the password from `.env`, and switches off the system password stores
-      (macOS Keychain, Windows Credential Manager) for this project, so the token is not saved
-      anywhere else.
-    - Sets the GitHub address of the project.
-    - Adds a Claude Code rule (`.claude/settings.json`) that forbids the agent to read `.env`.
+Git asks for your login. Use the **token instead of a password**:
 
-    You can [read the script](../github-setup.sh) before running it.
+```text
+Username for 'https://github.com': <your GitHub username>
+Password for 'https://<you>@github.com': <paste the token>
+```
 
-**After 7 days**, or if something went wrong: create a new token (step 2) and run the same
-command again (step 4). It simply replaces the old token.
+Nothing appears while you paste the token. That is on purpose; just press ++enter++.
+
+=== "macOS"
+
+    The Keychain remembers the token **for this repository only**, so the next `git push`
+    won't ask again.
+
+=== "Windows"
+
+    Instead of the questions above, a **Git Credential Manager** window may open. Choose
+    **Token** and paste it there. Do **not** choose *Sign in with your browser*: that would
+    give access to all your repositories.
+
+=== "Linux"
+
+    Git asks for the token on every push. Keep the token at hand (for example in a password
+    manager).
+
+**After 7 days** the token expires and `git push` fails. Create a new token (step 2) and run
+`git push` again; Git asks for the new one.
 
 !!! danger "Never run `gh auth login` in the course account"
     It would give the account, and with it the agent, access to all your repositories.

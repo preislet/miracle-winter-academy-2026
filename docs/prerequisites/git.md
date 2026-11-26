@@ -54,9 +54,9 @@ Sign up for free at [github.com/signup](https://github.com/signup). Remember you
 will need it on Monday.
 
 !!! danger "Do not log in to GitHub from the terminal"
-    In the course account, **never run `gh auth login`**, and don't save a GitHub password or
-    token in Git. The AI agent works in this account and could use stored credentials on all of
-    your repositories.
+    In the course account, **never run `gh auth login`** and don't connect Git to GitHub with
+    your password or a browser login. The AI agent works in this account and could use those
+    credentials on all of your repositories.
 
     During the [Git session](../workshops/git.md#connecting-to-github-safely) we connect to
     GitHub together, with a short-lived access token limited to one Academy repository.
