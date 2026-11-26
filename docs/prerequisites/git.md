@@ -14,8 +14,6 @@ for AI-assisted work: you commit, let the agent make changes, read the diff, the
     xcode-select --install
     ```
 
-    Or, if you use [Homebrew](https://brew.sh): `brew install git`.
-
 === "Windows"
 
     Download **Git for Windows** from [git-scm.com/downloads/win](https://git-scm.com/downloads/win)

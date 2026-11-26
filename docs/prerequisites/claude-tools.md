@@ -30,8 +30,6 @@ Two Claude tools are used during the course:
     curl -fsSL https://claude.ai/install.sh | bash
     ```
 
-    Or with Homebrew: `brew install --cask claude-code`.
-
 === "Windows"
 
     Make sure [Git for Windows](git.md) is installed first, because Claude Code uses Git Bash
