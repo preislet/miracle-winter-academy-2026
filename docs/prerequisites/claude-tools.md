@@ -47,11 +47,31 @@ Two Claude tools are used during the course:
     curl -fsSL https://claude.ai/install.sh | bash
     ```
 
+If the installer ends with a note that **`~/.local/bin` is not in your PATH**, run:
+
+=== "macOS"
+
+    ```bash
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+    ```
+
+=== "Windows"
+
+    Run the command that the installer shows, then open a new terminal.
+
+=== "Linux"
+
+    ```bash
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+    ```
+
 Check (in a **new** terminal window):
 
 ```bash
 claude --version
 ```
+
+If it says `command not found`, the PATH step above is missing.
 
 ### First start (once you have access)
 

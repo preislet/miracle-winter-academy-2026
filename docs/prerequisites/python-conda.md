@@ -68,7 +68,7 @@ conda --version
 
     ```bash
     conda activate miracle
-    python -c "import scanpy; print('scanpy', scanpy.__version__)"
+    python -c "import scanpy; print('scanpy OK')"
     ```
 
 The environment contains Python 3.12, pandas, matplotlib, JupyterLab, pytest, **scanpy**,
@@ -87,7 +87,7 @@ conda install -c conda-forge scvi-tools muon
 Check:
 
 ```bash
-python -c "import scvi, muon; print('scvi-tools', scvi.__version__)"
+python -c "import scvi, muon; print('scvi-tools and muon OK')"
 ```
 
 !!! note "Package list to be confirmed"

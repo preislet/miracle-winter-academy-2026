@@ -75,6 +75,16 @@ R and RStudio, Positron, Git and GitHub, Python and Conda, and Claude.
     password. Enter your **normal account's** name and password there. Do not turn
     `miracle-course` into an administrator.
 
+    **On Linux** `sudo` does not ask for another account; it simply refuses
+    (*miracle-course is not in the sudoers file*). Run the `sudo` commands (R, Git, Positron) as
+    your normal account from the course account's terminal, then switch back:
+
+    ```bash
+    su - <your-username>        # your normal account's password
+    sudo apt install ...        # the sudo commands from the R, Git and Positron pages
+    exit                        # back to miracle-course
+    ```
+
 !!! info "R asks about a personal library"
     When you run `install.packages()` in the course account, R may ask
     *"Would you like to use a personal library instead?"* Answer **yes** (twice). The packages

@@ -21,7 +21,7 @@ if `conda` is not found in Git Bash.
 git --version                 # git version 2.x
 claude --version              # x.y.z (Claude Code)
 conda --version               # conda 2x.x
-conda run -n miracle python -c "import scanpy, anndata, leidenalg; print('Python OK, scanpy', scanpy.__version__)"
+conda run -n miracle python -c "import scanpy, anndata, leidenalg; print('Python OK')"
 ```
 
 === "Basic"
@@ -33,7 +33,7 @@ conda run -n miracle python -c "import scanpy, anndata, leidenalg; print('Python
     Also check the extra single-cell packages:
 
     ```bash
-    conda run -n miracle python -c "import scvi, muon; print('scvi-tools', scvi.__version__)"
+    conda run -n miracle python -c "import scvi, muon; print('scvi-tools and muon OK')"
     ```
 
 ## In RStudio

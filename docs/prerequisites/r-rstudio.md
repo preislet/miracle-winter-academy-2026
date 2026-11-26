@@ -36,8 +36,11 @@ version (`R.version.string` in the RStudio console) and skip to
     sudo apt install --no-install-recommends r-base r-base-dev
     # system libraries needed by common packages
     sudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev \
-      libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+      libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libuv1-dev
     ```
+
+    On Linux, R packages are compiled from source, so installing the course packages below
+    takes longer than on macOS or Windows (about 5–15 minutes).
 
 ## Install RStudio Desktop
 
