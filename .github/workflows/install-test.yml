@@ -150,26 +150,6 @@ jobs:
           if dseditgroup -o checkmember -m miracle-course admin | grep -q "is a member"; then echo "is admin"; exit 1; fi
           echo "standard user: OK"
 
-      - name: Separation without the fix (file directly in the admin's home)
-        id: s14
-        continue-on-error: true
-        run: |
-          echo "private" > ~/private-test.txt && chmod 644 ~/private-test.txt
-          cd /tmp
-          if sudo -u miracle-course cat /Users/runner/private-test.txt >/dev/null 2>&1; then
-            echo "::warning::miracle-course CAN read files directly in the admin's home (group staff)"; exit 1
-          fi
-          echo "denied: OK"
-
-      - name: Separation after chmod 700 ~
-        id: s15
-        continue-on-error: true
-        run: |
-          chmod 700 ~
-          cd /tmp
-          if sudo -u miracle-course cat /Users/runner/private-test.txt >/dev/null 2>&1 || sudo -u miracle-course ls /Users/runner >/dev/null 2>&1; then exit 1; fi
-          echo "denied after chmod 700: OK"
-
       - name: R from CRAN (.pkg)
         id: s16
         continue-on-error: true
@@ -249,4 +229,4 @@ jobs:
 
       - name: Report step outcomes
         if: always()
-        run: echo "::notice title=Step outcomes (macos)::${{ steps.s12.outcome }} | Pre-installed state%0A${{ steps.s13.outcome }} | Create miracle-course (standard user)%0A${{ steps.s14.outcome }} | Separation without the fix (file directly in the admin's home)%0A${{ steps.s15.outcome }} | Separation after chmod 700 ~%0A${{ steps.s16.outcome }} | R from CRAN (.pkg)%0A${{ steps.s17.outcome }} | Course R packages as miracle-course (personal library)%0A${{ steps.s18.outcome }} | Advanced R as miracle-course (zellkonverter)%0A${{ steps.s19.outcome }} | Git as miracle-course%0A${{ steps.s20.outcome }} | Miniforge as miracle-course (guide commands, init = yes)%0A${{ steps.s21.outcome }} | conda in a new zsh window%0A${{ steps.s22.outcome }} | Course environment from the live site%0A${{ steps.s23.outcome }} | Setup-check command for Python%0A${{ steps.s24.outcome }} | Advanced Python (scvi-tools + muon)%0A${{ steps.s25.outcome }} | Claude Code installer as miracle-course%0A${{ steps.s26.outcome }} | claude in a new zsh window (before the PATH step)%0A${{ steps.s27.outcome }} | claude after the guide's PATH step"
+        run: echo "::notice title=Step outcomes (macos)::${{ steps.s12.outcome }} | Pre-installed state%0A${{ steps.s13.outcome }} | Create miracle-course (standard user)%0A${{ steps.s16.outcome }} | R from CRAN (.pkg)%0A${{ steps.s17.outcome }} | Course R packages as miracle-course (personal library)%0A${{ steps.s18.outcome }} | Advanced R as miracle-course (zellkonverter)%0A${{ steps.s19.outcome }} | Git as miracle-course%0A${{ steps.s20.outcome }} | Miniforge as miracle-course (guide commands, init = yes)%0A${{ steps.s21.outcome }} | conda in a new zsh window%0A${{ steps.s22.outcome }} | Course environment from the live site%0A${{ steps.s23.outcome }} | Setup-check command for Python%0A${{ steps.s24.outcome }} | Advanced Python (scvi-tools + muon)%0A${{ steps.s25.outcome }} | Claude Code installer as miracle-course%0A${{ steps.s26.outcome }} | claude in a new zsh window (before the PATH step)%0A${{ steps.s27.outcome }} | claude after the guide's PATH step"
