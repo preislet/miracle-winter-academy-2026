@@ -51,7 +51,7 @@ permissions and critical evaluation of results run through the whole session.
        paragraph, with the agent documenting software versions and parameters.
     2. **Tool integration:** let the agent use your own R/Python scripts and command-line tools.
     3. **Sandboxing and permissions:** configure allowed and denied actions, file system and network
-       limits; discuss what is acceptable for pseudonymised medical data.
+       limits; discuss what is acceptable for sensitive data.
     4. **Critical evaluation:** reproduce the agent's result independently and compare.
 
 ## Materials
