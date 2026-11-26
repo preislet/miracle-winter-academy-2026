@@ -55,8 +55,13 @@ remember.
 
 ## 2. Sign in to the course account
 
-Sign out of your normal account (or use *Switch user*) and sign in as **`miracle-course`**. Finish the
-first-start setup (you can skip Apple ID / Microsoft account / iCloud / OneDrive prompts).
+1. **Disconnect any VPN connections and network drives.**
+2. **Log out** of your regular account. Don't just use *Switch user*: logging out closes
+   everything that runs in your normal account.
+3. **Log in** as **`miracle-course`** and finish the first-start setup.
+4. **Don't import existing credentials and don't sign in to cloud storage.** Skip the
+   Apple ID / iCloud and Microsoft account / OneDrive prompts, don't connect Google Drive or
+   Dropbox, and don't import browser profiles, saved passwords or keychains.
 
 From now on, everything for the course happens in this account.
 
@@ -76,12 +81,11 @@ R and RStudio, Positron, Git and GitHub, Python and Conda, and Claude.
     then install into the course account only.
 
 ??? note "Already installed everything in your normal account?"
-    Programs installed for all users (R, RStudio, Positron, Git, the GitHub CLI) also work in the
-    new account. Everything that belongs to a user has to be done again in `miracle-course`:
+    Programs installed for all users (R, RStudio, Positron, Git) also work in the new account. Everything that belongs to a user has to be done again in `miracle-course`:
 
     - [Miniforge and the `miracle` environment](python-conda.md)
     - [R packages](r-rstudio.md#course-r-packages)
-    - [Git name and e-mail, and `gh auth login`](git.md#2-tell-git-who-you-are)
+    - [Git name and e-mail](git.md#2-tell-git-who-you-are)
     - [Claude Code and the Claude desktop app](claude-tools.md), including logging in with your
       MIRACLE Academy team account
 
@@ -123,4 +127,6 @@ readable by other users by default; `sudo chmod 750 /home/<your-username>` fixes
 - Always **sign in as `miracle-course`** for the course.
 - Keep course projects and data in the course account. Don't copy personal or real patient data
   into it.
-- Log in to GitHub and Claude in this account's browser.
+- Log in only to Claude (your MIRACLE Academy team account). Don't store GitHub credentials in
+  Git or the GitHub CLI: we set up a limited GitHub token together in the Git session.
+- No VPN, network drives or cloud storage while you work in the course account.

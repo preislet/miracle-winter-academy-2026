@@ -19,7 +19,6 @@ if `conda` is not found in Git Bash.
 
 ```bash
 git --version                 # git version 2.x
-gh auth status                # Logged in to github.com account <you>
 claude --version              # x.y.z (Claude Code)
 conda --version               # conda 2x.x
 conda run -n miracle python -c "import scanpy, anndata, leidenalg; print('Python OK, scanpy', scanpy.__version__)"

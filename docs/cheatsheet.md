@@ -1,5 +1,5 @@
 ---
-description: Terminal, Git, GitHub CLI, Conda, Python, R and Claude Code commands used during the MIRACLE Winter Academy 2026.
+description: Terminal, Git, GitHub, Conda, Python, R and Claude Code commands used during the MIRACLE Winter Academy 2026.
 ---
 
 # Cheat sheet
@@ -74,16 +74,20 @@ Use Terminal on macOS, your terminal app on Linux, and **Git Bash** on Windows.
 | `git worktree list` | Show all worktrees |
 | `git worktree remove ../<folder>` | Remove a worktree when you are done |
 
-## GitHub CLI
+## GitHub access (limited token)
 
-| Command | What it does |
+Set up together in the [Git session](workshops/git.md#connecting-to-github-safely). The token
+works for **one repository** and **expires after 7 days**.
+
+| Step | What to do |
 |---|---|
-| `gh auth login` / `gh auth status` | Log in to GitHub / check you are logged in |
-| `gh repo create <name> --private --source=. --push` | Create a GitHub repository from the current folder and push it |
-| `gh repo clone <owner>/<repo>` | Clone a repository |
-| `gh pr create` | Open a pull request for the current branch |
-| `gh pr list` / `gh pr checkout <number>` | List pull requests / check one out locally |
-| `gh pr view --web` | Open the pull request in your browser |
+| 1 | On github.com, create a dedicated repository for the Academy |
+| 2 | *Settings* → *Developer settings* → *Fine-grained tokens* → *Generate new token*: expiration **7 days**, *Only select repositories* → your Academy repository, **Contents: Read and write**, Pull requests only if needed, nothing else |
+| 3 | `git config --global credential.https://github.com.useHttpPath true` |
+| 4 | `git remote add origin https://github.com/<you>/<repo>.git` |
+| 5 | `git push -u origin main`. When Git asks for a password, paste the token |
+
+!!! danger "Never run `gh auth login` in the course account"
 
 ## Conda
 

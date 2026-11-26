@@ -16,8 +16,9 @@ it. Git gives you that. This session builds the **review loop** used for the res
 > **commit → let the agent work → read the diff → keep or revert**
 
 !!! info "Before this session"
-    [Git installed and configured](../prerequisites/git.md), GitHub account, `gh auth status`
-    shows you are logged in.
+    [Git installed and configured](../prerequisites/git.md) in your
+    [course account](../prerequisites/separate-account.md), and a GitHub account.
+    No GitHub login in the terminal; we set that up together (see below).
 
 === "Basic"
 
@@ -40,7 +41,8 @@ it. Git gives you that. This session builds the **review loop** used for the res
     5. **Branches.** Try an experimental change on a branch, compare it, merge or delete it.
     6. **Reviewing AI-generated changes.** Let the agent modify a script. Read its diff line by
        line, decide what to keep, and revert the rest.
-    7. **Push to GitHub.** Create a repository with `gh repo create` and push your work.
+    7. **Push to GitHub.** Create an Academy repository on github.com, connect to it with a
+       [limited access token](#connecting-to-github-safely) and push your work.
 
     ### Materials
 
@@ -72,6 +74,37 @@ it. Git gives you that. This session builds the **review loop** used for the res
 
     - *Shared exercise repository: to be added*
     - *Slides: to be added*
+
+## Connecting to GitHub safely
+
+We set this up together during the session. The AI agent works in your course account, so we
+never give that account full access to GitHub. Instead, Git gets a **token that only works for
+one repository and expires after a week**.
+
+1. On github.com, **create a dedicated repository** for the Winter Academy.
+2. Generate a **fine-grained personal access token**: *Settings* → *Developer settings* →
+   *Personal access tokens* → *Fine-grained tokens* → *Generate new token*:
+    - **Expiration:** 7 days
+    - **Repository access:** *Only select repositories* → your Academy repository
+    - **Contents:** Read and write
+    - **Metadata:** Read-only (granted automatically)
+    - **Pull requests:** Read and write, only if needed
+    - Leave all other permissions disabled.
+3. Tell Git to keep credentials separate for each repository URL:
+
+    ```bash
+    git config --global credential.https://github.com.useHttpPath true
+    ```
+
+4. Use the **HTTPS** address of the repository. When Git asks for a password, paste the token:
+
+    ```bash
+    git remote add origin https://github.com/<you>/<academy-repo>.git
+    git push -u origin main
+    ```
+
+!!! danger "Never run `gh auth login` in the course account"
+    It would give the account, and with it the agent, access to all your repositories.
 
 ## Further reading
 

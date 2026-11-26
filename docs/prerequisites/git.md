@@ -53,43 +53,10 @@ git config --global init.defaultBranch main
 Sign up for free at [github.com/signup](https://github.com/signup). Remember your username, as you
 will need it on Monday.
 
-## 4. Connect your laptop to GitHub
+!!! danger "Do not log in to GitHub from the terminal"
+    In the course account, **never run `gh auth login`**, and don't save a GitHub password or
+    token in Git. The AI agent works in this account and could use stored credentials on all of
+    your repositories.
 
-The simplest way is the **GitHub CLI** (`gh`), which sets up authentication for you.
-
-=== "macOS"
-
-    ```bash
-    brew install gh
-    ```
-
-    No Homebrew? Download the macOS installer from [cli.github.com](https://cli.github.com).
-
-=== "Windows"
-
-    Download and run the `.msi` installer from [cli.github.com](https://cli.github.com),
-    or in PowerShell:
-
-    ```powershell
-    winget install --id GitHub.cli
-    ```
-
-    Then open a **new** Git Bash window.
-
-=== "Linux"
-
-    Follow [the official instructions](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
-    for your distribution (Ubuntu/Debian: add the GitHub apt repository, then `sudo apt install gh`).
-
-Then log in and follow the prompts. Choose **GitHub.com**, **HTTPS**, *Authenticate Git with your
-GitHub credentials: Yes*, and *Login with a web browser*:
-
-```bash
-gh auth login
-```
-
-Check:
-
-```bash
-gh auth status
-```
+    During the [Git session](../workshops/git.md#connecting-to-github-safely) we connect to
+    GitHub together, with a short-lived access token limited to one Academy repository.
