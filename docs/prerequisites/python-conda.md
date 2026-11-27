@@ -91,10 +91,6 @@ Check:
 python -c "import scvi, muon; print('scvi-tools and muon OK')"
 ```
 
-The Advanced Python session also downloads two public datasets (about 45 MB). You will do that
-on Monday evening, once you have the course materials; see
-[Get started](../workshops/python.md#get-started) in the Advanced tab.
-
 !!! note "Package list to be confirmed"
     The instructors may update `environment.yml` before the course. If it changes, update your
     environment with `conda env update -n miracle -f environment.yml`.

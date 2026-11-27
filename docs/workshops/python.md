@@ -637,9 +637,8 @@ programmer. The two tracks cover different topics:
         cp -r ~/training-materials/Miracle-Winter-Academy/miracle-python-singlecell ~/miracle-academy/
         ```
 
-    - [ ] **Download the data** (about 45 MB) **the evening before**. The 10x Genomics server
-        is sometimes slow (from seconds to a few minutes for one person), and at the venue
-        everyone would download at once:
+    - [ ] **Start the data download** (about 45 MB) right away. It can take a few minutes; let
+        it run while you do the next two steps:
 
         ```bash
         cd ~/miracle-academy/miracle-python-singlecell
