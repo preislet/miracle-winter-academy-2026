@@ -637,7 +637,9 @@ programmer. The two tracks cover different topics:
         cp -r ~/training-materials/Miracle-Winter-Academy/miracle-python-singlecell ~/miracle-academy/
         ```
 
-    - [ ] **Download the data** (about 45 MB), ideally the evening before:
+    - [ ] **Download the data** (about 45 MB) **the evening before**. The 10x Genomics server
+        is sometimes slow (from seconds to a few minutes for one person), and at the venue
+        everyone would download at once:
 
         ```bash
         cd ~/miracle-academy/miracle-python-singlecell
@@ -699,7 +701,8 @@ programmer. The two tracks cover different topics:
         - the **number of PCs** from the elbow plot;
         - the **clustering resolution**: predict, then compare 0.1, 0.5 and 1.5;
         - **annotation** of each cluster from marker genes;
-        - a **robustness check**: do your cell types survive a different number of PCs?
+        - optional, if you have time: a **robustness check**: do your cell types survive a
+          different number of PCs?
 
         !!! success "Checkpoint"
             A UMAP coloured by your cell-type names, and the file
