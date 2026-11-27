@@ -54,7 +54,7 @@ if (length(missing)) message("Missing: ", paste(missing, collapse = ", ")) else 
 === "Advanced"
 
     ```r
-    requireNamespace("zellkonverter")    # should return TRUE
+    all(sapply(c("zellkonverter", "rhdf5", "HDF5Array"), requireNamespace))    # should return TRUE
     ```
 
 ## In Positron

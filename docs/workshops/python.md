@@ -605,24 +605,165 @@ programmer. The two tracks cover different topics:
 
     #### Learning goals
 
-    - Understand the `AnnData` object and the scverse ecosystem
-    - Run a standard Scanpy workflow: QC, normalisation, HVGs, PCA, neighbours, UMAP, Leiden
-    - Use scvi-tools for probabilistic modelling and batch integration
-    - Move data between R (`SingleCellExperiment`/Seurat) and Python (`AnnData`)
+    - Read and navigate an `AnnData` object, and map it to `SingleCellExperiment`
+    - Run a standard Scanpy workflow and justify its choices: QC thresholds, number of PCs,
+      clustering resolution, annotation
+    - Integrate two batches with scVI, and measure the result instead of judging a UMAP
+    - Move a processed dataset from Python to R
 
     #### What we will do
 
-    1. **AnnData anatomy.** `.X`, `.obs`, `.var`, `.obsm`, `.layers`; compare with
-       `SingleCellExperiment`.
-    2. **Scanpy workflow** on a public PBMC dataset, from raw counts to clusters and markers.
-    3. **scvi-tools.** Train an scVI model, use the latent space for integration, and compare the
-       result with PCA.
-    4. **R ↔ Python.** Export to `.h5ad`; read it in R with `zellkonverter`; discuss pitfalls
-       (raw vs normalised counts, metadata types).
+    Four interactive notebooks on public 10x Genomics data from healthy donors: **PBMC 3k**
+    (chemistry v1) and **PBMC 10k** (chemistry v3). Each notebook explains each step, gives you
+    code to read and run, and has **TODO** cells where you write the code or make a choice, and
+    **Predict** questions to answer before you run a cell.
+
+    1. **The AnnData object** (~15 min). Sparse matrices, `.obs`/`.var`, views vs copies, layers.
+    2. **A Scanpy workflow** (~35 min). From raw counts to annotated cell types on PBMC 3k.
+    3. **Batch integration with scVI** (~35 min). PBMC 3k + 10k: measure the batch effect, remove
+       it, and check for over-correction.
+    4. **From Python to R** (optional). The result in R with zellkonverter.
+
+    A personal **AI tutor** runs next to the notebooks, as in the R refresher: it gives hints
+    instead of answers and explains error messages.
+
+    #### Get started
+
+    - [ ] **Copy the notebooks** into your `~/miracle-academy` folder (the course materials
+        repository was cloned on Monday, in the [R refresher](r-refresher.md#get-started)):
+
+        ```bash
+        cd ~/training-materials && git pull
+        cp -r ~/training-materials/Miracle-Winter-Academy/miracle-python-singlecell ~/miracle-academy/
+        ```
+
+    - [ ] **Download the data** (about 45 MB), ideally the evening before:
+
+        ```bash
+        cd ~/miracle-academy/miracle-python-singlecell
+        conda activate miracle
+        python pbmc_data.py
+        ```
+
+    - [ ] **Open the folder in Positron** (*File → Open Folder…*), select the `miracle` Python
+        interpreter (top right), and open `01_anndata.ipynb`.
+    - [ ] **Start Claude Code** in Positron's terminal, in this folder. When it asks whether you
+        trust the folder, answer yes.
+
+        ```bash
+        claude
+        ```
+
+    !!! warning "Start the tutor!"
+        Type this as your first message to the tutor:
+
+        ```text
+        start
+        ```
+
+        It finds the notebook you are working on and tells you where you are. Ask it for a hint
+        at any time. It reads your **saved** notebook, so save often (++ctrl+s++ / ++cmd+s++).
+
+    ??? abstract "Part 1: The AnnData object"
+
+        Every single-cell tool in Python passes one kind of object around: **AnnData**. Read it,
+        and you can follow almost any single-cell notebook, including the ones an agent writes.
+
+        | AnnData | What it holds | In R (`SingleCellExperiment`) |
+        |---|---|---|
+        | `.X` | the main matrix, **cells x genes** | `assay(sce)`, but **genes x cells** |
+        | `.obs` | data frame, one row per cell | `colData(sce)` |
+        | `.var` | data frame, one row per gene | `rowData(sce)` |
+        | `.layers` | other matrices of the same shape | other `assays(sce)` |
+        | `.obsm` | per-cell embeddings (PCA, UMAP) | `reducedDims(sce)` |
+        | `.uns` | unstructured extras | `metadata(sce)` |
+
+        In `01_anndata.ipynb` you will:
+
+        - measure how sparse a count matrix is, and what that saves;
+        - compute per-cell and per-gene summaries from a sparse matrix;
+        - predict what happens when you change a **view** of an AnnData object;
+        - keep the raw counts in a layer, and save and reload an `.h5ad` file.
+
+        !!! success "Checkpoint"
+            You can say, without looking it up, which way round the matrix is in Python and in R,
+            and why `adata[mask].copy()` has the `.copy()`.
+
+    ??? abstract "Part 2: A Scanpy workflow"
+
+        **QC → normalisation → highly variable genes → PCA → neighbours → UMAP → Leiden → marker
+        genes → annotation**, on PBMC 3k. Every step has defaults that run without complaint. The
+        TODOs are the places where a choice matters:
+
+        - your own **QC thresholds**, each with one sentence of reasoning;
+        - the **number of PCs** from the elbow plot;
+        - the **clustering resolution**: predict, then compare 0.1, 0.5 and 1.5;
+        - **annotation** of each cluster from marker genes;
+        - a **robustness check**: do your cell types survive a different number of PCs?
+
+        !!! success "Checkpoint"
+            A UMAP coloured by your cell-type names, and the file
+            `results/pbmc3k_processed.h5ad` (Part 4 reads it).
+
+    ??? abstract "Part 3: Batch integration with scVI"
+
+        PBMC 3k and 10k come from the same tissue but different chemistries. Put together
+        naively, cells group by dataset instead of by cell type.
+
+        - Find the genes the two datasets share (they were aligned to different genome versions).
+        - Set **QC thresholds per batch**, and see why one set for both would be wrong.
+        - Write a **batch-mixing metric** yourself: the fraction of each cell's neighbours that
+          come from the other batch. Predict its value for perfect mixing.
+        - Train **scVI** on the raw counts and measure again.
+        - Check that the cell types are still separate: integration can also remove biology
+          (**over-correction**), and the mixing score cannot see that.
+
+        Training takes a few minutes on a laptop CPU; the model is saved to `models/`, so you
+        train it only once.
+
+        !!! success "Checkpoint"
+            The batch-mixing score before and after scVI, and an answer to: *what would go wrong
+            if `batch_key` were healthy vs. leukaemia?*
+
+    ??? abstract "Part 4 (optional): From Python to R"
+
+        Export from Python, read in R with `zellkonverter::readH5AD(..., reader = "R")`, and check
+        what ended up where: which matrix holds counts, how categories arrive, where the UMAP
+        went. Needs the [Advanced R packages](../prerequisites/r-rstudio.md#advanced-track-extra-packages).
+
+        Run `04_read_in_R.R` line by line in Positron's R console, or from the terminal:
+
+        ```bash
+        Rscript 04_read_in_R.R
+        ```
+
+    #### Common problems
+
+    ??? question "`ModuleNotFoundError: No module named 'pbmc_data'`"
+        The notebook runs in another folder. Open the folder `miracle-python-singlecell` itself
+        in Positron (*File → Open Folder…*), not a folder above it.
+
+    ??? question "`ModuleNotFoundError: No module named 'scvi'`"
+        The notebook uses another interpreter, or scvi-tools is missing. Check the interpreter
+        (top right in Positron) is `miracle`, and see the
+        [Advanced extra packages](../prerequisites/python-conda.md#advanced-track-extra-packages).
+
+    ??? question "The download fails"
+        `pbmc_data.py` prints the address of the file and where to save it. Download it in the
+        browser, or copy the `data/` folder from a neighbour.
+
+    ??? question "scVI training is very slow"
+        Set `MAX_EPOCHS = 100` in the training cell. The result is a bit less polished, but the
+        steps and the conclusions are the same.
+
+    ??? question "The tutor talks about an old version of my code"
+        It reads the saved file. Save the notebook (++ctrl+s++ / ++cmd+s++) and ask again.
 
     #### Materials
 
-    - *Notebooks: to be added*
+    - Notebooks: `Miracle-Winter-Academy/miracle-python-singlecell` in the
+      [course materials repository](https://github.com/rse-cuni/training-materials/tree/main/Miracle-Winter-Academy/miracle-python-singlecell)
+      (`*_solution.ipynb` are the solved versions)
 
 ## Further reading
 

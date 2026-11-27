@@ -55,8 +55,8 @@ jobs:
         continue-on-error: true
         shell: pwsh
         run: |
-          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); install.packages('BiocManager', repos = 'https://cloud.r-project.org'); BiocManager::install(c('SingleCellExperiment', 'zellkonverter'), ask = FALSE, update = FALSE)"
-          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); quit(status = !requireNamespace('zellkonverter', quietly = TRUE))"
+          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); install.packages('BiocManager', repos = 'https://cloud.r-project.org'); BiocManager::install(c('SingleCellExperiment', 'zellkonverter', 'rhdf5', 'HDF5Array'), ask = FALSE, update = FALSE)"
+          & $env:RSCRIPT -e "lib <- Sys.getenv('R_LIBS_USER'); .libPaths(lib); quit(status = !all(sapply(c('zellkonverter', 'rhdf5', 'HDF5Array'), requireNamespace, quietly = TRUE)))"
 
       - name: Miniforge (Just Me, default location) + conda init bash
         id: s05
@@ -172,8 +172,8 @@ jobs:
         continue-on-error: true
         run: |
           cd /tmp
-          sudo -u miracle-course -i Rscript -e "install.packages('BiocManager', repos = 'https://cloud.r-project.org'); BiocManager::install(c('SingleCellExperiment', 'zellkonverter'), ask = FALSE, update = FALSE)" >/tmp/bioc.log 2>&1
-          sudo -u miracle-course -i Rscript -e "quit(status = !requireNamespace('zellkonverter', quietly = TRUE))"
+          sudo -u miracle-course -i Rscript -e "install.packages('BiocManager', repos = 'https://cloud.r-project.org'); BiocManager::install(c('SingleCellExperiment', 'zellkonverter', 'rhdf5', 'HDF5Array'), ask = FALSE, update = FALSE)" >/tmp/bioc.log 2>&1
+          sudo -u miracle-course -i Rscript -e "quit(status = !all(sapply(c('zellkonverter', 'rhdf5', 'HDF5Array'), requireNamespace, quietly = TRUE)))"
 
       - name: Git as miracle-course
         id: s19

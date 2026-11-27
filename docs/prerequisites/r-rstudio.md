@@ -75,7 +75,7 @@ These let you move single-cell data between R and Python:
 
 ```r
 install.packages("BiocManager")
-BiocManager::install(c("SingleCellExperiment", "zellkonverter"))
+BiocManager::install(c("SingleCellExperiment", "zellkonverter", "rhdf5", "HDF5Array"))
 ```
 
 !!! note "Package list to be confirmed"
