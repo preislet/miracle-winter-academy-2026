@@ -10,9 +10,9 @@
 
 !!! abstract "Draft, to be confirmed by instructors"
 
-How to give an AI coding agent good instructions, and how to check what it produces. Both tracks
-use **project instruction files** (`AGENTS.md`, `CLAUDE.md`), which tell the agent about your
-project once so you don't repeat yourself, and **plugins** such as
+How to work with an AI coding agent: what it is, how it works and how to give it the right
+context. The Advanced track also uses **project instruction files**
+(`AGENTS.md`, `CLAUDE.md`) and **plugins** such as
 [Superpowers](https://github.com/obra/superpowers), which add structured workflows like
 planning, test-driven development and code review.
 
@@ -24,20 +24,22 @@ planning, test-driven development and code review.
 
     ### Learning goals
 
-    - Write clear, specific instructions for a coding agent
-    - Create a project instruction file describing your data, conventions and rules
-    - Install and use a plugin (Superpowers)
-    - Interpret and verify the analysis code the agent generates
+    - Understand the basic concepts: LLM, token, agent, context window, harness
+    - Work with an agent (Claude Code): key commands, plan mode
+    - Give the agent the right context, and keep out what is stale or irrelevant
+    - Read what the agent reports and what it writes for itself (notes, plans), and check it
+      before you rely on it
+    - Know the risks: made-up answers, leaked data, deleted files
 
     ### What we will do
 
-    1. **Anatomy of a good prompt:** context, goal, constraints, definition of done. Compare a vague
-       and a precise prompt on the same task.
-    2. **`CLAUDE.md` / `AGENTS.md`:** write one for a small R analysis project (data location,
-       packages to use, "never modify `data/raw/`", style rules), then watch the agent follow it.
-    3. **Plugins:** install Superpowers and let it *plan before coding*.
-    4. **Verify, don't trust:** the agent writes an analysis in R. You check it by reading the
-       diff, re-running it, checking numbers by hand and asking the agent to explain each step.
+    1. **Basic concepts:** what an AI agent is, what it costs, and how to keep it safe.
+    2. **First steps with Claude Code:** let the agent build a small app for synthetic blood
+       count data, then check what it flagged and why.
+    3. **Working with context:** run the same task with too little, the right, and stale
+       context, and compare the results.
+    4. **`CLAUDE.md` and plan mode:** tell the agent about your project once, and agree on a
+       plan before it writes code.
 
 === "Advanced"
 
