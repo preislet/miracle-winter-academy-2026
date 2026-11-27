@@ -8,61 +8,133 @@
 :material-human-male-board: <span class="pill basic">Basic</span> Jan Stuchlý, Luděk Svoboda &nbsp;&nbsp; <span class="pill advanced">Advanced</span> Tomáš Preisler, Sára Veselá
 </div>
 
-!!! abstract "Draft, to be confirmed by instructors"
+A puzzle-based R refresher with a **personal AI tutor**. You solve one puzzle step by step in
+RStudio; the tutor, running in Claude Code next to your script, gives hints instead of answers
+and checks your work, while the instructors lead the room. The goal is to bring everyone to the
+same R level before Tuesday, when you will be reading and checking R code that an AI agent writes.
+Understanding matters more than finishing.
 
-A puzzle-based R refresher with **individual AI tutoring**. You work through a puzzle step by
-step; an AI tutor gives hints instead of answers, and instructors circulate. The goal is to bring
-everyone to the same R level before the AI-assisted coding sessions on Tuesday.
+!!! question "The puzzle: 100 bulbs"
+    A corridor has 100 light bulbs, all off. 100 people walk past, one after another. Person *k*
+    toggles (off → on, on → off) every bulb whose number is a multiple of *k*. Which bulbs are on
+    at the end, and why?
 
 !!! info "Before this session"
-    [R, RStudio and the course R packages](../prerequisites/r-rstudio.md) installed.
+    [R, RStudio and the course R packages](../prerequisites/r-rstudio.md) installed,
+    [Git](../prerequisites/git.md) set up, and [Claude Code](../prerequisites/claude-tools.md)
+    installed and logged in with your MIRACLE Academy team account.
+
+## Get started
+
+Both tracks use the same project:
+[`miracle-r-refresher`](https://github.com/rse-cuni/training-materials/tree/main/Miracle-Winter-Academy/miracle-r-refresher)
+in the course materials repository.
+
+1. Download the course materials (in the terminal, in your course working folder):
+
+    ```bash
+    git clone https://github.com/rse-cuni/training-materials.git
+    ```
+
+2. Copy the folder `training-materials/Miracle-Winter-Academy/miracle-r-refresher` to your
+   working folder, so that your work does not end up in the course repository. Copy the whole
+   folder: it contains a hidden `.claude` folder with the tutor's settings.
+3. Open `r_levelling_basics.Rproj` in that copy. RStudio opens the project.
+4. Open `work/bulbs.R`. This is where you write your code.
+5. Switch to the **Terminal** tab in RStudio, type `claude`, and when Claude Code asks whether
+   you trust the folder, answer yes. Then start the tutor with the name of your room:
+
+    ```text
+    start basic
+    ```
+
+    or
+
+    ```text
+    start advanced
+    ```
 
 !!! tip "How the AI tutor works"
-    The tutor is set up to *guide*, not to solve: it asks questions, points to the relevant
-    function and explains error messages. Asking it for the full solution defeats the purpose.
+    - **Ask for a hint** whenever you are stuck. Each request gives the next, more concrete hint:
+      a question, then the concept, an example, the same idea on a different problem, and
+      finally a skeleton with blanks.
+    - **Type `check`** to have your script checked. The check reads the *saved* file, so save
+      often (++ctrl+s++ / ++cmd+s++).
+    - **Error messages:** paste them or just ask; the tutor explains what they mean.
+    - **The solution:** the tutor won't hand it over at the first request, because working it out
+      is the point. If you really want it, ask again and it will write the current step for you.
+    - **`notes.md`** is yours: when you pass a step, the tutor writes up what you worked out,
+      other approaches and the blind alleys you hit. Take it home.
+    - The tutor can only run the check. It cannot run or change anything else on your laptop.
 
 === "Basic"
 
     ### Learning goals
 
-    - Work confidently with vectors, indexing and data frames
-    - Write `for` loops and `if` conditions
-    - Write your own small functions with arguments and return values
-    - Make a basic plot and fit a simple linear regression
+    By the end you can read and reason about R code that uses:
 
-    ### What we will do
+    - vectors and their types, and indexing
+    - nested `for` loops and `if`
+    - your own functions with arguments, defaults and a return value, and input checks with
+      `stopifnot()`
+    - `sapply()`, a first plot, and a linear regression with `lm()`
+    - error messages: what they say and where to look
 
-    1. **Warm-up puzzle:** vectors, indexing, `seq()`, `sum()`, logical conditions.
-    2. **Loops:** repeat a calculation over many samples; collect the results.
-    3. **Functions:** turn the repeated code into a function; add arguments and defaults.
-    4. **Plotting:** visualise the result with base R or `ggplot2`.
-    5. **Regression:** fit `lm()`, read the summary, plot the fitted line.
-    6. Each step comes with hints from the AI tutor and a checkpoint to verify your answer.
+    ### The route
+
+    | Step | What you do | R you practise |
+    |---|---|---|
+    | 1 | Represent the 100 bulbs | vectors, types, `rep()` |
+    | 2 | Let all 100 people walk past | nested `for` loops, `if`, `%%`, indexing |
+    | 3 | Read the result | `which()`, `sum()` on logical vectors |
+    | 4 | Any number of bulbs | functions, defaults, `stopifnot()` |
+    | 5 | The R way: make it faster | vectorised conditions, `system.time()` |
+    | 6 | Find the law: how many bulbs stay on? | `sapply()`, `plot()`, `lm()`, transformations |
+    | 7 | Why these bulbs? (discussion) | own function, `identical()` |
+
+    The instructor introduces each step at the whiteboard and leads the discussion of step 7.
+    You work at your own pace; if you finish early, the tutor has extensions for you.
 
     ### Materials
 
-    - *Puzzle repository: to be added*
+    - [`miracle-r-refresher`](https://github.com/rse-cuni/training-materials/tree/main/Miracle-Winter-Academy/miracle-r-refresher):
+      the puzzle project with the tutor (see [Get started](#get-started))
 
 === "Advanced"
 
     ### Learning goals
 
-    - Replace loops with vectorised code and measure the difference
-    - Write reusable functions and keep them in separate files (`source()`, project structure)
-    - Extend an existing solution to a harder version of the problem
+    - Move quickly through the core R constructs (loops, functions, `sapply()`, `lm()`)
+    - Generalise a function to several arguments and validate every input
+    - Replace loops with a matrix computation, and with mathematics
+    - Measure time *and* memory, and predict how they grow with the size of the problem
+    - Predict what code will do before running it, the skill you need to check AI-written code
 
-    ### What we will do
+    ### The route
 
-    1. **Same puzzle, faster pace:** solve the core puzzle quickly with the AI tutor.
-    2. **Vectorise and time it:** rewrite loop solutions with vectorised operations and
-       `apply`-family functions; compare with `bench::mark()`.
-    3. **Structure:** move functions into `R/` files, load them with `source()`, and use `here()`
-       for paths.
-    4. **Puzzle extensions:** generalise the solution, handle edge cases, add a `testthat` test.
+    1. **Steps 1–7 at a brisk pace.** The same puzzle as the Basic track, from representing the
+       bulbs to finding the law with a regression and proving it. Writing the function in
+       step 7 is part of the route.
+    2. **Extension A: N bulbs, M people.** Generalise your function so that the number of people
+       can differ from the number of bulbs (`light_bulbs_nm()`). Predict the outcome first, for
+       example for 100 bulbs and 60 people, then run it and explain what you see. Watch out for
+       a quiet R behaviour that breaks naive solutions.
+    3. **Extension B: speed and memory.** Two more versions of the same function: one with no
+       loops at all, built on a matrix (`light_bulbs_matrix()`), and one that uses what step 7
+       showed (`light_bulbs_math()`). Then compare all versions with `bench::mark()` for
+       growing n and explain the differences in time and memory.
+
+    The tutor checks both extensions just like the main steps. If you still have time, it has
+    a few more extras (rule variants, moving functions into `R/` files with `source()`).
+
+    !!! warning "Large n can freeze your laptop"
+        A matrix of n × n values grows very quickly. Estimate its size with `object.size()` on a
+        small example before you try a large n, and ask the tutor if unsure.
 
     ### Materials
 
-    - *Puzzle repository: to be added*
+    - [`miracle-r-refresher`](https://github.com/rse-cuni/training-materials/tree/main/Miracle-Winter-Academy/miracle-r-refresher):
+      the puzzle project with the tutor (see [Get started](#get-started))
 
 ## Further reading
 
