@@ -15,15 +15,13 @@ agent on a real task and use Git to keep control of every change.
 
 === "Basic"
 
-    ### Verifiable goals
-
-    #### Learning goals
+    ### Learning goals
 
     - Work in small steps: one task, test it yourself, commit
     - Test the result like a user and check a few values by hand
     - Set verifiable goals (expected output, reference data, tests), so the agent can check its own work
 
-    #### What we will do
+    ### What we will do
 
     1. **Small step and test:** continue with the app from session I, one change at a time.
     2. **Verifiable goals:** ask for neutropenia grading with no yardstick, then run the
