@@ -5,9 +5,8 @@ Two Claude tools are used during the course:
 - **Claude Code**: an AI coding agent that runs in your terminal, reads and edits files in your
   project and runs commands. It asks for your permission before editing files or running
   commands. Used in the *AI-assisted
-  coding* and *single-cell* practicals.
-- **Claude desktop app / Claude Science**: used in the *AI-assisted science* sessions for
-  literature search and scientific workflows.
+  coding*, *AI-assisted science* and *single-cell* practicals.
+- **Claude desktop app**: the Claude chat app, optional.
 
 !!! info "Your course account: the MIRACLE Academy team"
     You don't need your own Claude subscription. You will receive an **email with an invitation
@@ -109,7 +108,3 @@ Follow the login prompt in your browser. Type `/exit` to quit.
 
     There is no official desktop app for Linux. Use [claude.ai](https://claude.ai) in your browser.
 
-## Claude Science
-
-Access to **Claude Science** comes with your MIRACLE Academy team account. Further instructions
-will follow in the invitation email or during the course.

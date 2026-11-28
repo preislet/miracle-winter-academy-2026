@@ -334,5 +334,5 @@ planning, test-driven development and code review.
 ## Materials
 
 - <span class="pill advanced">Advanced</span> Exercise project: `Miracle-Winter-Academy/miracle-ai-assisted-coding-I-advanced/code` in the course materials repository
-- <span class="pill advanced">Advanced</span> Slides: `Miracle-Winter-Academy/miracle-ai-assisted-coding-I-advanced/presentations/ai_assisted_coding_I_advanced.pptx` in the course materials repository
+- <span class="pill advanced">Advanced</span> Slides: `Miracle-Winter-Academy/miracle-ai-assisted-coding-I-advanced/ai_assisted_coding_I_advanced.pdf` in the course materials repository
 - [Claude Code documentation](https://code.claude.com/docs)
